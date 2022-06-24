@@ -5,7 +5,7 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/db");
 
 const userRoutes = require("./routes/user.routes");
-// const postRoutes = require("./routes/post.routes");
+const postRoutes = require("./routes/post.routes");
 
 const { checkUser, requireAuth } = require("./middlewares/auth.middleware");
 
@@ -36,7 +36,7 @@ app.get("/jwtid", requireAuth, (req, res) => {
 
 //routes
 app.use("/api/user", userRoutes);
-// app.use("/api/post", postRoutes);
+app.use("/api/post", postRoutes);
 
 // server
 app.listen(process.env.PORT, () => {
