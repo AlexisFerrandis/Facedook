@@ -1,3 +1,43 @@
-body {
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	list-style-type: none;
+	outline: none;
+	text-decoration: none;
+	font-family: "Noto Sans", sans-serif;
+}
+
+$fds-blue-05: #ecf3ff;
+$fds-blue-30: #aac9ff;
+$fds-blue-40: #77a7ff;
+$fds-blue-60: #1877f2;
+$fds-blue-70: #2851a3;
+$fds-blue-80: #1d3c78;
+
+$fds-gray-00: #f5f6f7;
+$fds-gray-05: #f2f3f5;
+$fds-gray-10: #ebedf0;
+$fds-gray-20: #dadde1;
+$fds-gray-25: #ccd0d5;
+$fds-gray-30: #bec3c9;
+$fds-gray-45: #8d949e;
+$fds-gray-70: #606770;
+$fds-gray-80: #444950;
+$fds-gray-90: #303338;
+$fds-gray-100: #1c1e21;
+$fds-green-55: #00a400;
+$fds-highlight: #3578e5;
+
+.error {
 	color: red;
+	font-weight: bold;
+}
+.success {
+	color: green;
+	font-weight: bold;
 }
