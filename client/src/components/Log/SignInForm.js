@@ -34,18 +34,17 @@ const SignInForm = () => {
 
 	return (
 		<div>
-			<form action="" onSubmit={handleLogin} id="sign-up-form">
-				<label htmlFor="email">Email</label>
-				<br />
-				<input type="text" name="email" id="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+			<form action="" onSubmit={handleLogin} id="sign-in-form" className="sign-in-form">
+				<h2>Se connecter à Facebook</h2>
+				{/* <label htmlFor="email"></label> */}
+				<input type="text" name="email" id="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Adresse e-mail" />
 				<div className="email error"></div>
-				<br />
-				<label htmlFor="password">Mot de passe</label>
-				<br />
-				<input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+				{/* <label htmlFor="password"></label> */}
+				<input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Mot de passe" />
 				<div className="password error"></div>
-				<br />
-				<input type="submit" value="Se connecter" />
+				<input className="blue-btn" type="submit" value="Se connecter" />
+				<p className="forgoted-password">Mot de passe oublié ?</p>
+				<div className="grey-separator"></div>
 			</form>
 		</div>
 	);

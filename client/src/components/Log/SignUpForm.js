@@ -58,30 +58,24 @@ const SignUpForm = () => {
 					<h4 className="success">Enregistrement réussi, veuillez vous connecter</h4>
 				</>
 			) : (
-				<form action="" onSubmit={handleRegister} id="sign-up-form">
-					<label htmlFor="pseudo">Pseudo</label>
-					<br />
-					<input type="text" name="pseudo" id="pseudo" onChange={(e) => setPseudo(e.target.value)} value={pseudo} />
+				<form action="" onSubmit={handleRegister} id="sign-up-form" className="sign-up-form">
+					<h2>Créer un compte</h2>
+					<h3>C'est rapide et facile.</h3>
+					{/* <label htmlFor="pseudo">Pseudo</label> */}
+					<input type="text" name="pseudo" id="pseudo" onChange={(e) => setPseudo(e.target.value)} value={pseudo} placeholder="Pseudo" />
 					<div className="pseudo error"></div>
-					<br />
 
-					<label htmlFor="email">Email</label>
-					<br />
-					<input type="text" name="email" id="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+					{/* <label htmlFor="email">Email</label> */}
+					<input type="text" name="email" id="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Adresse e-mail" />
 					<div className="email error"></div>
-					<br />
 
-					<label htmlFor="password">Mot de passe</label>
-					<br />
-					<input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+					{/* <label htmlFor="password">Mot de passe</label> */}
+					<input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Mot de passe" />
 					<div className="password error"></div>
-					<br />
 
-					<label htmlFor="password-conf">Confirmer le mot de passe</label>
-					<br />
-					<input type="password" name="password" id="password-conf" onChange={(e) => setControlPassword(e.target.value)} value={controlPassword} />
+					{/* <label htmlFor="password-conf">Confirmer le mot de passe</label> */}
+					<input type="password" name="password" id="password-conf" onChange={(e) => setControlPassword(e.target.value)} value={controlPassword} placeholder="Confirmer le mot de passe" />
 					<div className="password-confirm error"></div>
-					<br />
 
 					<input type="checkbox" id="terms" />
 					<label htmlFor="terms">
@@ -93,7 +87,8 @@ const SignUpForm = () => {
 					<div className="terms error"></div>
 					<br />
 
-					<input type="submit" value="valider l'inscription"></input>
+					<input type="submit" value="S'inscrire" className="green-btn"></input>
+					<div className="grey-separator"></div>
 				</form>
 			)}
 		</>

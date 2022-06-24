@@ -1,0 +1,77 @@
+.connection-form {
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+	margin: 30px 0 0;
+	padding: 20px 12px 22px;
+	width: 395px;
+	@include tablet-breakpoint {
+		margin: 30px auto 0;
+	}
+	@include tablet-breakpoint {
+		width: 100%;
+		max-width: 395px;
+	}
+	.form-container {
+		h2 {
+			color: $fds-gray-100;
+		}
+		input[type="text"],
+		input[type="password"] {
+			font-size: 17px;
+			padding: 14px 16px;
+			width: 350px;
+			margin-bottom: 15px;
+			border: 1px solid #dddfe2;
+			color: #1d2129;
+			background-color: #fff;
+			border-radius: 6px;
+			&:focus {
+				border: 1px solid $fds-blue-60;
+			}
+			@include tablet-breakpoint {
+				width: 97%;
+			}
+		}
+		.forgoted-password {
+			font-size: 14px;
+			margin: 17px 0 20px;
+			color: $fds-blue-60;
+			cursor: pointer;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	li {
+		margin: 25px auto 0;
+		cursor: pointer;
+	}
+}
+
+.sign-in-form {
+	h2 {
+		margin-bottom: 15px;
+	}
+}
+
+.sign-up-form {
+	h3 {
+		font-weight: 400;
+		font-size: 0.9em;
+		color: $fds-gray-70;
+		margin-bottom: 15px;
+	}
+	input[type="checkbox"] {
+		margin-right: 7px;
+		cursor: pointer;
+	}
+	label {
+		font-size: 14px;
+		a {
+			color: $fds-blue-60;
+		}
+	}
+}

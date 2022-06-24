@@ -6,10 +6,12 @@
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	list-style: none;
 	list-style-type: none;
 	outline: none;
 	text-decoration: none;
 	font-family: "Noto Sans", sans-serif;
+	border: none;
 }
 
 $fds-blue-05: #ecf3ff;
@@ -33,6 +35,10 @@ $fds-gray-100: #1c1e21;
 $fds-green-55: #00a400;
 $fds-highlight: #3578e5;
 
+$log-background: #f0f2f5;
+$grey-separator: #dadde1;
+$text-setting-title: #8a8d91;
+
 .error {
 	color: red;
 	font-weight: bold;
@@ -40,4 +46,23 @@ $fds-highlight: #3578e5;
 .success {
 	color: green;
 	font-weight: bold;
+}
+
+.grey-separator {
+	height: 1px;
+	width: 100%;
+	margin: 10px auto;
+	background-color: $grey-separator;
+}
+
+// mixins
+@mixin tablet-breakpoint {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+@mixin mobile-breakpoint {
+	@media (max-width: 550px) {
+		@content;
+	}
 }

@@ -1,0 +1,95 @@
+.full-login-page {
+	.up-part {
+		background-color: $log-background;
+		padding: 72px 60px 160px 60px;
+		@include mobile-breakpoint {
+			padding: 24px 15px 110px 15px;
+		}
+		.log-container {
+			display: flex;
+			max-width: 980px;
+			margin: 0 auto 5px;
+			padding: 25px 0;
+			@include tablet-breakpoint {
+				flex-direction: column;
+				text-align: center;
+				justify-content: center;
+			}
+			.logo-tag {
+				width: 60%;
+				margin: 105px 0;
+				padding-right: 90px;
+				@include tablet-breakpoint {
+					width: 80%;
+					padding: 0;
+					margin: 0 auto;
+				}
+				.img-container {
+					img {
+						object-fit: cover;
+						width: 235px;
+						margin-bottom: 12px;
+						@include mobile-breakpoint {
+							width: 201px;
+						}
+					}
+				}
+				h1 {
+					font-weight: 400;
+					font-size: 24px;
+					line-height: 29px;
+				}
+			}
+		}
+		.pro-account-creation {
+			margin: 15px auto;
+			width: 395px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: 400;
+			span {
+				font-weight: 700;
+				cursor: pointer;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			@include tablet-breakpoint {
+				width: 97%;
+			}
+		}
+	}
+
+	.bot-part {
+		padding: 20px 40px;
+		font-size: 13px;
+		color: $text-setting-title;
+		@include mobile-breakpoint {
+			padding: 12px 12px;
+		}
+		.settings-container {
+			max-width: 980px;
+			margin: auto;
+			ul {
+				li {
+					display: inline;
+					margin-right: 10px;
+					cursor: pointer;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				.more-languages {
+					width: 30px;
+					font-weight: 900;
+					border: 1px solid $fds-gray-30;
+					color: $text-setting-title;
+					cursor: pointer;
+				}
+			}
+			.copyright {
+				margin-top: 25px;
+			}
+		}
+	}
+}
