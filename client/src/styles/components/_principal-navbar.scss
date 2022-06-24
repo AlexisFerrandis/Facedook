@@ -1,0 +1,21 @@
+.principal-nav {
+	&-container {
+		display: flex;
+		justify-content: space-between;
+		.left-part,
+		.mid-part,
+		.right-part-list,
+		.mid-part-all {
+			display: flex;
+			img {
+				width: 22px;
+				height: 22px;
+			}
+		}
+		.left-part .logo img {
+			object-fit: cover;
+			height: 40px;
+			width: 40px;
+		}
+	}
+}

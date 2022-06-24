@@ -35,7 +35,7 @@ const SignInForm = () => {
 	return (
 		<div>
 			<form action="" onSubmit={handleLogin} id="sign-in-form" className="sign-in-form">
-				<h2>Se connecter à Facebook</h2>
+				<h2>Se connecter à Facedook</h2>
 				{/* <label htmlFor="email"></label> */}
 				<input type="text" name="email" id="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Adresse e-mail" />
 				<div className="email error"></div>

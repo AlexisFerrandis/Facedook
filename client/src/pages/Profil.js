@@ -18,7 +18,7 @@ const Profil = () => {
 								<div className="img-container">
 									<img src="./assets/logo/logo.png" alt="img" />
 								</div>
-								<h1>Avec Facetook, partagez et restez en contact avec votre entourage.</h1>
+								<h1>Avec Facedook, partagez et restez en contact avec votre entourage.</h1>
 							</div>
 							<Log signin={true} signup={false} />
 						</div>
@@ -50,12 +50,12 @@ const Profil = () => {
 									<li>S’inscrire</li>
 									<li>Se connecter</li>
 									<li>Messenger</li>
-									<li>Facetook Lite</li>
+									<li>Facedook Lite</li>
 									<li>Watch</li>
 									<li>Lieux</li>
 									<li>Jeux</li>
 									<li>Marketplace</li>
-									<li>Facetook Play</li>
+									<li>Facedook Play</li>
 									<li>Oculus</li>
 									<li>Portal</li>
 								</ul>
@@ -81,7 +81,7 @@ const Profil = () => {
 								</ul>
 							</div>
 							<div className="copyright">
-								<p> Meta © 2022</p>
+								<p> Mëta © 2022</p>
 							</div>
 						</div>
 					</div>

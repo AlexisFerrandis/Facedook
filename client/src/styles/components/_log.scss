@@ -1,9 +1,12 @@
 .full-login-page {
 	.up-part {
 		background-color: $log-background;
-		padding: 72px 60px 160px 60px;
+		padding: 72px 60px 145px 60px;
+		@include tablet-breakpoint {
+			padding: 24px 15px 105px 15px;
+		}
 		@include mobile-breakpoint {
-			padding: 24px 15px 110px 15px;
+			padding: 10px 15px 105px 15px;
 		}
 		.log-container {
 			display: flex;
@@ -38,12 +41,15 @@
 					font-weight: 400;
 					font-size: 24px;
 					line-height: 29px;
+					@include mobile-breakpoint {
+						font-size: 20px;
+					}
 				}
 			}
 		}
 		.pro-account-creation {
 			margin: 15px auto;
-			width: 395px;
+			width: 380px;
 			text-align: center;
 			font-size: 14px;
 			font-weight: 400;
@@ -54,7 +60,7 @@
 					text-decoration: underline;
 				}
 			}
-			@include tablet-breakpoint {
+			@include mobile-breakpoint {
 				width: 97%;
 			}
 		}
@@ -75,6 +81,7 @@
 					display: inline;
 					margin-right: 10px;
 					cursor: pointer;
+					font-size: 11px;
 					&:hover {
 						text-decoration: underline;
 					}

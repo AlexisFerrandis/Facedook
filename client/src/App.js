@@ -1,11 +1,34 @@
-import Routers from "./components/routes";
+import { useEffect, useState } from "react";
+import { UIdContext } from "./components/AppContext";
+import Routes from "./components/Routes";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getUser } from "./actions/user.actions";
 
-function App() {
+const App = () => {
+	const [uid, setUId] = useState(null);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		const fetchToken = async () => {
+			await axios({
+				method: "get",
+				url: `${process.env.REACT_APP_API_URL}jwtid`,
+				withCredentials: true,
+			})
+				.then((res) => setUId(res.data))
+				.catch((err) => console.log(err + "no token"));
+		};
+		fetchToken();
+
+		if (uid) dispatch(getUser(uid));
+	}, [uid, dispatch]);
+
 	return (
-		<div className="App">
-			<Routers />
-		</div>
+		<UIdContext.Provider value={uid}>
+			<Routes />
+		</UIdContext.Provider>
 	);
-}
+};
 
 export default App;

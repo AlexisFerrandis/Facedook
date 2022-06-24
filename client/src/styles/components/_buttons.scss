@@ -13,6 +13,9 @@
 	@include tablet-breakpoint {
 		width: 97%;
 	}
+	@include tablet-breakpoint {
+		font-size: 1.05em;
+	}
 	&:hover {
 		background-color: #1969d2;
 	}
@@ -22,7 +25,7 @@
 	background-color: #42b72a;
 	color: #fff;
 	border-radius: 6px;
-	font-size: 17px;
+	font-size: 16px;
 	line-height: 48px;
 	padding: 0 16px;
 	width: 226px;

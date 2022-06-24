@@ -8,15 +8,16 @@
 	padding: 20px 12px 22px;
 	width: 395px;
 	@include tablet-breakpoint {
-		margin: 30px auto 0;
-	}
-	@include tablet-breakpoint {
-		width: 100%;
+		width: 85%;
 		max-width: 395px;
+		margin: 30px auto 0;
 	}
 	.form-container {
 		h2 {
 			color: $fds-gray-100;
+			@include mobile-breakpoint {
+				font-size: 1.3em;
+			}
 		}
 		input[type="text"],
 		input[type="password"] {
@@ -33,6 +34,10 @@
 			}
 			@include tablet-breakpoint {
 				width: 97%;
+			}
+			@include mobile-breakpoint {
+				padding: 10px 12px;
+				font-size: 14px;
 			}
 		}
 		.forgoted-password {

@@ -40,12 +40,12 @@ $grey-separator: #dadde1;
 $text-setting-title: #8a8d91;
 
 .error {
-	color: red;
-	font-weight: bold;
+	color: rgb(189, 6, 6);
+	font-size: 14px;
 }
 .success {
-	color: green;
-	font-weight: bold;
+	color: $fds-green-55;
+	font-size: 14px;
 }
 
 .grey-separator {
