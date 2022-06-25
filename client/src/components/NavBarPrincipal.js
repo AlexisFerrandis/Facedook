@@ -30,15 +30,15 @@ const NavBarPrincipal = () => {
 				<div className="mid-part">
 					<ul className="mid-part-all">
 						<li className="thread ">
-							<NavLink to="/">
-								<div className="principal-navbar-ico is-active">
+							<NavLink to="/" className={(state) => (state.isActive ? "is-active" : "")}>
+								<div className="principal-navbar-ico ">
 									<img src="./assets/picto/house-solid.svg" alt="home" />
 								</div>
 							</NavLink>
 						</li>
 						{uid ? (
 							<li className="todo">
-								<NavLink to="/friends">
+								<NavLink to="/friends" className={(state) => (state.isActive ? "is-active" : "")}>
 									<div className="principal-navbar-ico">
 										<img src="./assets/picto/user-group-solid.svg" alt="home" />
 									</div>
@@ -54,7 +54,7 @@ const NavBarPrincipal = () => {
 							</li> */}
 						{uid ? (
 							<li className="todo">
-								<NavLink to="/watch">
+								<NavLink to="/watch" className={(state) => (state.isActive ? "is-active" : "")}>
 									<div className="principal-navbar-ico">
 										<img src="./assets/picto/photo-film-solid.svg" alt="home" />
 									</div>
