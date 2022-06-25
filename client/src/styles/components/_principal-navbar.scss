@@ -1,5 +1,9 @@
 .principal-nav {
+	-webkit-box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.29);
+	box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.29);
+	padding: 3px 10px 0 7px;
 	&-container {
+		align-items: center;
 		display: flex;
 		justify-content: space-between;
 		.left-part,
@@ -11,11 +15,100 @@
 				width: 22px;
 				height: 22px;
 			}
+			.principal-navbar-ico img {
+				filter: invert(49%) sepia(7%) saturate(230%) hue-rotate(182deg) brightness(100%) contrast(86%);
+			}
 		}
-		.left-part .logo img {
-			object-fit: cover;
-			height: 40px;
-			width: 40px;
+		.left-part {
+			align-items: center;
+			width: 160px;
+			.logo img {
+				object-fit: cover;
+				height: 40px;
+				width: 40px;
+			}
+			.search-on {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 37px;
+				height: 37px;
+				background-color: #f0f2f5;
+				border-radius: 50%;
+				margin-left: 5px;
+				img {
+					width: 13px;
+					height: 13px;
+				}
+			}
+		}
+		.mid-part {
+			.mid-part-all {
+				width: 260px;
+				display: flex;
+				justify-content: space-around;
+			}
+			li {
+				padding: 4px 20px;
+				border-radius: 5px;
+				transition: 300ms;
+				&:hover {
+					background-color: $log-background;
+				}
+
+				.is-active {
+					position: relative;
+					&::after {
+						position: absolute;
+						bottom: -10px;
+						left: -20px;
+						content: "";
+						height: 3px;
+						width: 62px;
+						border-radius: 10px;
+						background-color: $primary-icon;
+					}
+					img {
+						filter: invert(33%) sepia(99%) saturate(1159%) hue-rotate(192deg) brightness(95%) contrast(90%);
+					}
+				}
+			}
+		}
+		.right-part {
+			&-list {
+				align-items: center;
+				.options-navbar-ico {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 35px;
+					height: 35px;
+					background-color: #f0f2f5;
+					border-radius: 50%;
+					margin-left: 5px;
+					.ico {
+						width: 15px;
+						height: 15px;
+						filter: invert(10%) sepia(7%) saturate(230%) hue-rotate(182deg) brightness(100%) contrast(86%);
+					}
+				}
+				.profil-pic-container {
+					display: flex;
+					justify-content: center;
+					width: 30px;
+					height: 30px;
+					background-color: #f0f2f5;
+					border-radius: 50%;
+					margin-left: 5px;
+					// -webkit-box-shadow: inset 0px 8px 13px -3px #000000;
+					// box-shadow: inset 0px 8px 13px -3px #000000;
+					.profil-pic {
+						width: 100%;
+						height: 100%;
+						border-radius: 50%;
+					}
+				}
+			}
 		}
 	}
 }
