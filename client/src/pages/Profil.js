@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Log from "../components/Log";
 import { UIdContext } from "../components/AppContext";
 import UpdateProfil from "../components/Profil/UpdateProfil";
+import NavBarPrincipal from "../components/NavBarPrincipal";
 
 const Profil = () => {
 	const uid = useContext(UIdContext);
@@ -9,7 +10,10 @@ const Profil = () => {
 	return (
 		<div className="profil-page">
 			{uid ? (
-				<UpdateProfil />
+				<>
+					<NavBarPrincipal />
+					<UpdateProfil />
+				</>
 			) : (
 				<div className="full-login-page">
 					<div className="up-part">

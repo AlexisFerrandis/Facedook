@@ -5,13 +5,12 @@ import Home from "../../pages/Home";
 import Profil from "../../pages/Profil";
 import Trending from "../../pages/Trending";
 import NotFound from "../../pages/NotFound";
-import NavbarPrincipal from "../NavBarPrincipal";
+// import NavbarPrincipal from "../NavBarPrincipal";
 
 const index = () => {
 	return (
 		<div>
 			<Router>
-				<NavbarPrincipal />
 				<Routes>
 					<Route path="/" exact element={<Home />} />
 					<Route path="/profil" exact element={<Profil />} />

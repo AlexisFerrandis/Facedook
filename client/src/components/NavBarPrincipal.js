@@ -23,7 +23,9 @@ const NavBarPrincipal = () => {
 						<div className="search-on principal-navbar-ico">
 							<img src="./assets/picto/magnifying-glass-solid.svg" alt="search" />
 						</div>
-					) : null}
+					) : (
+						<li></li>
+					)}
 				</div>
 				<div className="mid-part">
 					<ul className="mid-part-all">
@@ -34,25 +36,33 @@ const NavBarPrincipal = () => {
 								</div>
 							</NavLink>
 						</li>
-						<li className="todo">
-							<NavLink to="/friends">
-								<div className="principal-navbar-ico">
-									<img src="./assets/picto/user-group-solid.svg" alt="home" />
-								</div>
-							</NavLink>
-						</li>
+						{uid ? (
+							<li className="todo">
+								<NavLink to="/friends">
+									<div className="principal-navbar-ico">
+										<img src="./assets/picto/user-group-solid.svg" alt="home" />
+									</div>
+								</NavLink>
+							</li>
+						) : (
+							<li></li>
+						)}
 						{/* <li className="principal-navbar-ico">
 								<NavLink to="/pages">
 									<img src="./assets/picto/flag-solid.svg" alt="home" />
 								</NavLink>
 							</li> */}
-						<li className="todo">
-							<NavLink to="/watch">
-								<div className="principal-navbar-ico">
-									<img src="./assets/picto/photo-film-solid.svg" alt="home" />
-								</div>
-							</NavLink>
-						</li>
+						{uid ? (
+							<li className="todo">
+								<NavLink to="/watch">
+									<div className="principal-navbar-ico">
+										<img src="./assets/picto/photo-film-solid.svg" alt="home" />
+									</div>
+								</NavLink>
+							</li>
+						) : (
+							<li></li>
+						)}
 						{/* <li className="principal-navbar-ico">
 								<NavLink to="/group">
 									<img src="./assets/picto/users-line-solid.svg" alt="home" />
@@ -86,7 +96,9 @@ const NavBarPrincipal = () => {
 							{/* <Logout /> */}
 						</ul>
 					</div>
-				) : null}
+				) : (
+					<li></li>
+				)}
 			</div>
 		</nav>
 	);
