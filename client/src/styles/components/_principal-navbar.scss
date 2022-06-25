@@ -1,7 +1,7 @@
 .principal-nav {
 	-webkit-box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.2);
 	box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.2);
-	padding: 2px 10px 0 7px;
+	padding: 5px 10px 2px 7px;
 	margin-bottom: 2px;
 	&-container {
 		align-items: center;
@@ -13,8 +13,8 @@
 		.mid-part-all {
 			display: flex;
 			img {
-				width: 22px;
-				height: 22px;
+				width: 26px;
+				height: 26px;
 			}
 			.principal-navbar-ico img {
 				filter: invert(49%) sepia(7%) saturate(230%) hue-rotate(182deg) brightness(100%) contrast(86%);
@@ -24,21 +24,21 @@
 			width: 160px;
 			.logo img {
 				object-fit: cover;
-				height: 38px;
-				width: 38px;
+				height: 42px;
+				width: 42px;
 			}
 			.search-on {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				width: 37px;
-				height: 37px;
+				width: 40px;
+				height: 40px;
 				background-color: #f0f2f5;
 				border-radius: 50%;
 				margin: 2px 0 0 5px;
 				img {
-					width: 13px;
-					height: 13px;
+					width: 16px;
+					height: 16px;
 				}
 			}
 		}
@@ -82,26 +82,27 @@
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					width: 35px;
-					height: 35px;
+					width: 40px;
+					height: 40px;
 					background-color: #f0f2f5;
 					border-radius: 50%;
-					margin-left: 5px;
+					margin-left: 6px;
+					padding-top: 4px;
 					transition: 300ms;
 					&:hover {
 						filter: brightness(95%);
 					}
 					.ico {
-						width: 15px;
-						height: 15px;
+						width: 18px;
+						height: 18px;
 						filter: invert(10%) sepia(7%) saturate(230%) hue-rotate(182deg) brightness(100%) contrast(86%);
 					}
 				}
 				.profil-pic-container {
 					display: flex;
 					justify-content: center;
-					width: 30px;
-					height: 30px;
+					width: 38px;
+					height: 38px;
 					background-color: #f0f2f5;
 					border-radius: 50%;
 					margin-left: 5px;

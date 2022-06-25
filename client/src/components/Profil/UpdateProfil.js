@@ -27,7 +27,16 @@ const UpdateProfil = () => {
 								<img className="camera-picto" src="./assets/picto/camera-solid.svg" alt="camera" />
 							</div>
 						</div>
-						<h1>{userData.pseudo}</h1>
+						<div className="name-and-logout">
+							<h1>{userData.pseudo}</h1>
+							<div className="logout">
+								<button>
+									<img className="logout-pic" src="./assets/picto/right-from-bracket-solid.svg" alt="logout" />
+									Se déconnecter
+								</button>
+							</div>
+						</div>
+						<div className="grey-separator"></div>
 					</div>
 				</div>
 				<div className="user-informations"></div>

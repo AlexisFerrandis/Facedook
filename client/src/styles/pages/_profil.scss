@@ -12,14 +12,14 @@
 			background: linear-gradient(0deg, rgb(124, 126, 129) 5%, rgba(240, 242, 245, 1) 25%);
 			.banner-modificator {
 				position: absolute;
-				right: 25px;
+				right: 30px;
 				bottom: 15px;
 				button {
 					display: flex;
 					align-items: center;
-					background-color: $log-background;
+					background-color: #fff;
 					padding: 6px 10px;
-					font-size: 12px;
+					font-size: 15px;
 					font-weight: 500;
 					border-radius: 5px;
 					cursor: pointer;
@@ -29,35 +29,91 @@
 					}
 				}
 				.camera-picto {
-					width: 15px;
-					height: 15px;
+					width: 16px;
+					height: 16px;
 					margin-right: 7px;
 					filter: invert(15%);
 				}
 			}
 		}
 		.profil-pic-container {
-			background-color: yellow;
-			min-height: 80px;
+			min-height: 100px;
+			padding: 0 10px;
 			.profil-pic-modificator {
 				position: relative;
 				.pic-container {
 					position: absolute;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 176px;
+					height: 176px;
 					left: 25px;
-					bottom: 0px;
+					bottom: -84px;
+					border: 5px solid #fff;
 					border-radius: 50%;
 					img {
+						border: 1px solid $fds-gray-30;
 						border-radius: 50%;
 						width: 168px;
 						height: 168px;
+						cursor: pointer;
+						&:hover {
+							filter: brightness(95%);
+						}
 					}
 				}
 				.camera-picto-container {
 					position: absolute;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					top: 35px;
+					left: 150px;
+					width: 36px;
+					height: 36px;
+					background-color: $fds-gray-20;
+					border-radius: 50%;
+					transition: 300ms;
+					cursor: pointer;
+					&:hover {
+						filter: brightness(95%);
+					}
 					img {
-						width: 15px;
-						height: 15px;
+						width: 20px;
+						height: 20px;
 						filter: invert(15%);
+					}
+				}
+			}
+			.name-and-logout {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 20px 10px 16px 220px;
+				h1 {
+					font-size: 2.2em;
+				}
+				.logout {
+					button {
+						display: flex;
+						align-items: center;
+						background-color: $fds-gray-20;
+						padding: 6px 10px;
+						font-size: 15px;
+						font-weight: 500;
+						border-radius: 5px;
+						cursor: pointer;
+						transition: 300ms;
+						&:hover {
+							filter: brightness(97%);
+						}
+						.logout-pic {
+							width: 16px;
+							height: 16px;
+							margin-right: 7px;
+							filter: invert(15%);
+						}
 					}
 				}
 			}
