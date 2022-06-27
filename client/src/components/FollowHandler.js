@@ -33,7 +33,7 @@ const FollowHandler = ({ idToFollow, type }) => {
 					{type === "suggestion" && (
 						<button className="add-friend-btn">
 							<img src="./assets/picto/user-minus-solid.svg" alt="remove-friend" />
-							Supprimer
+							Annuler
 						</button>
 					)}
 					{/* {type === "card" && <img src="./assets/pictos/checked.svg" alt="checked" />} */}

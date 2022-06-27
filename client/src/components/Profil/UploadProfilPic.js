@@ -24,6 +24,7 @@ const UploadProfilPic = (props) => {
 
 	return (
 		<div className="upload-profil-pic-container">
+			<div className="upload-profil-pic-preview"></div>
 			<div className="upload-profil-pic window-container">
 				<form action="" onSubmit={handlePicture} className="upload-pic">
 					<h3>Mettre à jour la photo de profil</h3>
@@ -36,6 +37,11 @@ const UploadProfilPic = (props) => {
 					<div className="upload-pic-container">
 						{file ? (
 							<div className="img-submit">
+								<div className="upload-profil-pic-preview">
+									<div className="upload-profil-pic-preview-visible">
+										<img className="img-preview-visible" src={URL.createObjectURL(file)} alt="profil-pic" />
+									</div>
+								</div>
 								<img className="img-preview" src={URL.createObjectURL(file)} alt="profil-pic" />
 								<input type="submit" value="Enregistrer" />
 							</div>
