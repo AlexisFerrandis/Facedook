@@ -40,3 +40,22 @@
 		width: 191px;
 	}
 }
+
+.close-window {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: 900;
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	border-radius: 50%;
+	color: $fds-gray-80;
+	background-color: $fds-gray-10;
+	cursor: pointer;
+	transition: 300ms;
+	&:hover {
+		filter: brightness(95%);
+	}
+}

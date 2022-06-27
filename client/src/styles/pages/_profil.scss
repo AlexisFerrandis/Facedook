@@ -48,7 +48,7 @@
 					align-items: center;
 					width: 176px;
 					height: 176px;
-					left: 25px;
+					left: 10px;
 					bottom: -84px;
 					border: 5px solid #fff;
 					border-radius: 50%;
@@ -69,7 +69,7 @@
 					justify-content: center;
 					align-items: center;
 					top: 35px;
-					left: 150px;
+					left: 140px;
 					width: 36px;
 					height: 36px;
 					background-color: $fds-gray-20;
@@ -90,7 +90,7 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				padding: 20px 10px 16px 220px;
+				padding: 20px 10px 16px 200px;
 				h1 {
 					font-size: 2.2em;
 				}
@@ -117,6 +117,134 @@
 					}
 				}
 			}
+		}
+	}
+	.user-informations {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px 15px;
+		ul {
+			display: flex;
+			li {
+				padding: 10px 20px;
+				border-radius: 5px;
+				color: $fds-gray-70;
+				font-size: 15px;
+				font-weight: 600;
+				transition: 300ms;
+				cursor: pointer;
+				&:hover {
+					background-color: $log-background;
+				}
+			}
+			.is-active {
+				position: relative;
+				color: $primary-icon;
+				&::after {
+					position: absolute;
+					bottom: -6px;
+					left: 2px;
+					content: "";
+					height: 3px;
+					width: 120px;
+					border-radius: 10px;
+					background-color: $primary-icon;
+					animation: after-fade 400ms forwards;
+				}
+			}
+		}
+		.fake-btn {
+			button {
+				padding: 0 15px 8px;
+				margin-right: 5px;
+				border-radius: 5px;
+				font-size: 20px;
+				font-weight: 800;
+				color: $fds-gray-90;
+				cursor: pointer;
+				transition: 300ms;
+				&:hover {
+					filter: brightness(97%);
+				}
+			}
+		}
+	}
+}
+.shadow-separator {
+	border-top: 1px solid $fds-gray-20;
+	-webkit-box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.2);
+	box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.2);
+}
+
+.user-firends-bio-thread {
+	background-color: $log-background;
+	padding: 0 20px;
+	.friends-recommendations {
+		max-width: 1250px;
+		margin: 0 auto;
+	}
+	.profil-thread {
+		display: flex;
+		max-width: 1250px;
+		margin: 0 auto;
+		.informations-container {
+			width: 32%;
+			.profil-intro {
+				padding: 10px 15px 5px 15px;
+				h3 {
+					margin-bottom: 7px;
+				}
+				button {
+					align-items: center;
+					text-align: center;
+					width: 100%;
+					background-color: $fds-gray-10;
+					padding: 7px 0;
+					margin: 10px 0;
+					border-radius: 6px;
+					font-size: 15px;
+					font-weight: 600;
+					color: $fds-gray-90;
+					cursor: pointer;
+					transition: 300ms;
+					&:hover {
+						filter: brightness(95%);
+					}
+				}
+			}
+			.profil-photo {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				padding: 12px 15px 15px 15px;
+				.fake-link {
+					padding: 7px;
+					color: $blue-link;
+					border-radius: 5px;
+					cursor: pointer;
+					transition: 200ms;
+					&:hover {
+						background-color: $log-background;
+					}
+				}
+			}
+			.legal {
+				display: flex;
+				flex-wrap: wrap;
+				font-size: 12px;
+				p {
+					margin: 0 5px;
+					color: $fds-gray-70;
+					cursor: pointer;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.thread-container {
+			width: 68%;
 		}
 	}
 }
