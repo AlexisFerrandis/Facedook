@@ -30,6 +30,9 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			default: "./uploads/profil/random-user.jpg",
 		},
+		bannerPicture: {
+			type: String,
+		},
 		bio: {
 			type: String,
 			max: 1024,

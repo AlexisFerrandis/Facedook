@@ -20,5 +20,6 @@ router.patch("/unfollow/:id", userController.unfollow);
 
 //upload
 router.post("/upload", upload.single("file"), uploadController.uploadProfil);
+router.post("/upload/banner", upload.single("file"), uploadController.uploadBanner);
 
 module.exports = router;

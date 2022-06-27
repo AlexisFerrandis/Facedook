@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Intro from "./Intro";
+import UploadBannerPic from "./UploadBannerPic";
 import UploadProfilPic from "./UploadProfilPic";
 
 const UpdateProfil = () => {
 	const userData = useSelector((state) => state.userReducer);
 
 	const [profilPicModification, setProfilPicModification] = useState(false);
+	const [bannerPicModification, setBannerPicModification] = useState(false);
 	// const dispatch = useDispatch();
 
 	const handleProfilPicModification = (e) => {
 		e.preventDefault();
-
 		setProfilPicModification(true);
+	};
+
+	const handleBannerPicModification = (e) => {
+		e.preventDefault();
+		setBannerPicModification(true);
 	};
 
 	return (
 		<>
 			{profilPicModification ? <UploadProfilPic profilPicModification={setProfilPicModification} /> : null}
+			{bannerPicModification ? <UploadBannerPic bannerPicModification={setBannerPicModification} /> : null}
 			<section className="update-profil-page">
 				<div className="pictures-modifications">
-					<div className="banner-container">
-						<img src="./" alt="banner-img" />
+					<div className="banner-container" onClick={handleBannerPicModification}>
+						{userData.bannerPicture ? <img className="banner-pic-container" src={userData.bannerPicture} alt="banner-pic" /> : null}
 						<div className="banner-modificator">
 							<button>
 								<img className="camera-picto" src="./assets/picto/camera-solid.svg" alt="camera" />
