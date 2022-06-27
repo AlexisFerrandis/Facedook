@@ -100,7 +100,11 @@
 				align-items: center;
 				padding: 20px 10px 16px 200px;
 				h1 {
-					font-size: 2.2em;
+					font-size: 2.1em;
+				}
+				a h5 {
+					color: $fds-gray-70;
+					height: 5px;
 				}
 				.logout {
 					button {
@@ -152,7 +156,7 @@
 				&::after {
 					position: absolute;
 					bottom: -6px;
-					left: 2px;
+					left: 4px;
 					content: "";
 					height: 3px;
 					width: 120px;
@@ -203,13 +207,17 @@
 				h3 {
 					margin-bottom: 7px;
 				}
-				button {
+				.content-value {
+					font-size: 12px;
+					font-weight: 500;
+				}
+				.principal-option {
 					align-items: center;
 					text-align: center;
 					width: 100%;
 					background-color: $fds-gray-10;
 					padding: 7px 0;
-					margin: 10px 0;
+					margin: 13px 0 5px;
 					border-radius: 6px;
 					font-size: 15px;
 					font-weight: 600;
@@ -218,6 +226,58 @@
 					transition: 300ms;
 					&:hover {
 						filter: brightness(95%);
+					}
+				}
+				textarea {
+					background-color: $log-background;
+					width: 100%;
+					height: 90px;
+					border-radius: 6px;
+					padding: 8px;
+					text-align: center;
+					font-size: 14px;
+					font-weight: 600;
+					resize: none;
+					border: 1px solid $fds-gray-30;
+					&::placeholder {
+						color: $text-setting-title;
+					}
+					&:focus {
+						background-color: #fff;
+						border: 1px solid $fds-blue-60;
+					}
+					&:hover {
+						background-color: $log-background;
+					}
+				}
+				.car-count {
+					text-align: right;
+					font-size: 12px;
+					font-weight: 400;
+					color: $fds-gray-70;
+				}
+				.buttons-container {
+					display: flex;
+					justify-content: right;
+					.secondary-options {
+						align-items: center;
+						text-align: center;
+						background-color: $fds-gray-10;
+						padding: 7px 7px;
+						margin: 5px 0 20px 5px;
+						border-radius: 6px;
+						font-size: 15px;
+						font-weight: 600;
+						color: $fds-gray-90;
+						cursor: pointer;
+						transition: 300ms;
+						&:hover {
+							filter: brightness(95%);
+						}
+					}
+					.submit {
+						background-color: $fds-blue-60;
+						color: #fff;
 					}
 				}
 			}

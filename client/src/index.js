@@ -6,9 +6,16 @@ import { Provider } from "react-redux";
 import { applyMiddleware, legacy_createStore as createStore } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
+
+import { getUsers } from "./actions/users.actions";
+// import { getPosts } from "./actions/post.actions";
+
 import reportWebVitals from "./reportWebVitals";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
+
+store.dispatch(getUsers());
+// store.dispatch(getPosts());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

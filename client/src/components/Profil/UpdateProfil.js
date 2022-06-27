@@ -1,15 +1,20 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import FriendsRecommandation from "../FriendsRecommandation";
 import Intro from "./Intro";
+
 import UploadBannerPic from "./UploadBannerPic";
 import UploadProfilPic from "./UploadProfilPic";
+
+import cookie from "js-cookie";
 
 const UpdateProfil = () => {
 	const userData = useSelector((state) => state.userReducer);
 
 	const [profilPicModification, setProfilPicModification] = useState(false);
 	const [bannerPicModification, setBannerPicModification] = useState(false);
-	// const dispatch = useDispatch();
 
 	const handleProfilPicModification = (e) => {
 		e.preventDefault();
@@ -19,6 +24,24 @@ const UpdateProfil = () => {
 	const handleBannerPicModification = (e) => {
 		e.preventDefault();
 		setBannerPicModification(true);
+	};
+
+	const removeCookie = (key) => {
+		if (window !== "undefined") {
+			cookie.remove(key, { expires: 1 });
+		}
+	};
+
+	const logout = async () => {
+		await axios({
+			method: "get",
+			url: `${process.env.REACT_APP_API_URL}api/user/logout`,
+			withCredentials: true,
+		})
+			.then(() => removeCookie("jwt"))
+			.catch((err) => console.log(err));
+
+		window.location = "/";
 	};
 
 	return (
@@ -46,9 +69,18 @@ const UpdateProfil = () => {
 							</div>
 						</div>
 						<div className="name-and-logout">
-							<h1>{userData.pseudo}</h1>
+							<div>
+								<h1>{userData.pseudo}</h1>
+								{userData.following && userData.following.lenght > 0 ? (
+									<NavLink to="/friends">
+										<h5>{userData.following.lenght} amis</h5>
+									</NavLink>
+								) : (
+									""
+								)}
+							</div>
 							<div className="logout">
-								<button>
+								<button onClick={logout}>
 									<img className="logout-pic" src="./assets/picto/right-from-bracket-solid.svg" alt="logout" />
 									Se déconnecter
 								</button>
@@ -77,7 +109,9 @@ const UpdateProfil = () => {
 			<div className="shadow-separator"></div>
 
 			<section className="user-firends-bio-thread">
-				<div className="friends-recommendations">FRIENDS RECOMMANDATIONS</div>
+				<div className="friends-recommendations">
+					<FriendsRecommandation />
+				</div>
 
 				<div className="profil-thread">
 					<div className="informations-container">
@@ -86,7 +120,9 @@ const UpdateProfil = () => {
 					<div className="thread-container">
 						<div className="post-container">Que voulez vous dire ?</div>
 						<div className="publications-settings">Publications</div>
-						<div className="user-thread">Thread</div>
+						<div className="user-thread">
+							<div className="user-thread-container">{/* <FirstPost /> */}</div>
+						</div>
 					</div>
 				</div>
 			</section>

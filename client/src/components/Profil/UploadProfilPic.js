@@ -8,7 +8,7 @@ const UploadProfilPic = (props) => {
 	const userData = useSelector((state) => state.userReducer);
 
 	const handlePicture = (e) => {
-		e.preventDefault();
+		// e.preventDefault();
 
 		const data = new FormData();
 		data.append("name", userData.pseudo);
