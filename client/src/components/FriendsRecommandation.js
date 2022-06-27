@@ -1,16 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import FollowHandler from "./FollowHandler";
 
 const FriendsRecommandation = () => {
+	const userData = useSelector((state) => state.userReducer);
 	const usersData = useSelector((state) => state.usersReducer);
-	const shuffledArray = usersData.sort((a, b) => 0.5 - Math.random());
+
+	const userDataExeptUser = usersData.filter((user) => user._id !== userData._id);
 
 	return (
 		<div className=" friends-recommendations-container">
 			<div className="window-container">
 				<h4>Connaissez-vous...</h4>
 				<ul>
-					{shuffledArray.map((user) => {
+					{userDataExeptUser.map((user) => {
 						return (
 							<li key={user._id} className="friend-container">
 								<div className="friend-recommandation">
@@ -19,11 +22,7 @@ const FriendsRecommandation = () => {
 									</div>
 									<div className="friend-recommandation-infos">
 										<div className="friend-recommandation-name">{user.pseudo}</div>
-
-										<button className="add-friend-btn">
-											<img src="./assets/picto/user-plus-solid.svg" alt="add-friend" />
-											Ajouter
-										</button>
+										<FollowHandler idToFollow={user._id} type={"suggestion"} />
 									</div>
 								</div>
 							</li>

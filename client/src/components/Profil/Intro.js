@@ -9,7 +9,7 @@ const Intro = () => {
 	const [bio, setBio] = useState("");
 	const [updateForm, setUpdateForm] = useState(false);
 	const userData = useSelector((state) => state.userReducer);
-	const usersData = useSelector((state) => state.usersReducer);
+	// const usersData = useSelector((state) => state.usersReducer);
 	// const error = useSelector((state) => state.errorReducer.userError);
 	const dispatch = useDispatch();
 

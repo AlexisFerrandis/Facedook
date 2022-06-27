@@ -1,7 +1,5 @@
-import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { UIdContext } from "../AppContext";
+import React from "react";
+import { useSelector } from "react-redux";
 
 const FirstPost = () => {
 	// const uid = useContext(UIdContext);

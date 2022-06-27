@@ -4,14 +4,14 @@
 		height: 3px;
 	}
 	::-webkit-scrollbar-track {
-		background: $fds-gray-30;
+		background: $fds-gray-20;
 	}
 	::-webkit-scrollbar-thumb {
-		background: $fds-gray-70;
+		background: $fds-gray-45;
 		cursor: pointer;
 	}
 	::-webkit-scrollbar-thumb:hover {
-		background: $fds-gray-45;
+		background: $fds-gray-30;
 	}
 	.window-container {
 		overflow-x: scroll;
@@ -53,8 +53,9 @@
 			display: flex;
 			align-items: center;
 			text-align: center;
+			justify-content: center;
 			width: 100%;
-			padding: 7px 60px;
+			padding: 7px 0;
 			margin-top: 30px;
 			font-size: 15px;
 			font-weight: 500;
