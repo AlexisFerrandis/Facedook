@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import axios from "axios";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { UIdContext } from "../components/AppContext";
 
@@ -11,10 +13,7 @@ const LeftNavBar = () => {
 				<ul>
 					<li>
 						<NavLink to="/">
-							<div className="link-container">
-								<img src="./" alt="todo" />
-								<p>{uid.pseudo}</p>
-							</div>
+							<div className="link-container">DINAMYK NAME</div>
 						</NavLink>
 					</li>
 				</ul>
