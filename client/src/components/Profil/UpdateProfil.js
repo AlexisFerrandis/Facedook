@@ -71,9 +71,9 @@ const UpdateProfil = () => {
 						<div className="name-and-logout">
 							<div>
 								<h1>{userData.pseudo}</h1>
-								{userData.following && userData.following.lenght > 0 ? (
+								{userData.followers && userData.followers.length > 0 ? (
 									<NavLink to="/friends">
-										<h5>{userData.following.lenght} amis</h5>
+										<h5>{userData.followers.length === 1 ? "1 ami" : userData.followers.length + " amis"}</h5>
 									</NavLink>
 								) : (
 									""
