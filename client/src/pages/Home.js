@@ -16,14 +16,16 @@ const Home = () => {
 		<div>
 			<NavBarPrincipal />
 			<div className="home-container">
-				<LeftNavBar />
-				<main className="home-thread-container">
-					<header className="home-thread-header">
-						{uid ? <NewPostForm /> : <Log signin={true} signup={false} />}
-						<Thread />
-					</header>
-				</main>
-				<RightNavBar />
+				<div className="home-content">
+					<LeftNavBar />
+					<main className="home-thread-container">
+						<header className="home-thread-header">
+							{uid ? <NewPostForm /> : <Log signin={true} signup={false} />}
+							<Thread />
+						</header>
+					</main>
+					<RightNavBar />
+				</div>
 			</div>
 		</div>
 	);

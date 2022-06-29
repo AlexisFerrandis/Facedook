@@ -9,6 +9,7 @@ import UploadBannerPic from "./UploadBannerPic";
 import UploadProfilPic from "./UploadProfilPic";
 
 import cookie from "js-cookie";
+import NewPostForm from "../Post/NewPostForm";
 
 const UpdateProfil = () => {
 	const userData = useSelector((state) => state.userReducer);
@@ -118,7 +119,9 @@ const UpdateProfil = () => {
 						<Intro />
 					</div>
 					<div className="thread-container">
-						<div className="post-container">Que voulez vous dire ?</div>
+						<div className="post-container">
+							<NewPostForm />
+						</div>
 						<div className="publications-settings">Publications</div>
 						<div className="user-thread">
 							<div className="user-thread-container">{/* <FirstPost /> */}</div>
