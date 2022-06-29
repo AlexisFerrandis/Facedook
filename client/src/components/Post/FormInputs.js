@@ -5,13 +5,15 @@ import { addPost, getPosts } from "../../actions/post.actions";
 import { isEmpty } from "../Utils";
 
 const FormInputs = (props) => {
+	const userData = useSelector((state) => state.userReducer);
+	const dispatch = useDispatch();
+
+	const [addPostPic, setAddPostPic] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const [message, setMessage] = useState("");
 	const [postPicture, setPostPicture] = useState(null);
 	const [video, setVideo] = useState("");
 	const [file, setFile] = useState();
-	const userData = useSelector((state) => state.userReducer);
-	const dispatch = useDispatch();
 
 	const handlePost = async () => {
 		if (message || postPicture || video) {
@@ -35,6 +37,11 @@ const FormInputs = (props) => {
 		setPostPicture(URL.createObjectURL(e.target.files[0]));
 		setFile(e.target.files[0]);
 		setVideo("");
+	};
+
+	const cancelPic = () => {
+		setAddPostPic(false);
+		setFile("");
 	};
 
 	const cancelPost = () => {
@@ -62,6 +69,10 @@ const FormInputs = (props) => {
 
 		handleVideo();
 	}, [userData, message, video]);
+
+	const addPostPicHandler = () => {
+		setAddPostPic(!addPostPic);
+	};
 
 	const closeUploadProfilPic = () => {
 		props.textFormModification(false);
@@ -97,18 +108,43 @@ const FormInputs = (props) => {
 						<div className="form-inputs-content-textarea">
 							<textarea name="message" id="message" placeholder={`Quoi de neuf, ${userData.pseudo} ?`} onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
 						</div>
-						<div className="form-media-preview">
-							{/* <img src={postPicture} alt="" />
-							{video && <iframe src={video} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={video}></iframe>} */}
-						</div>
-						<div className="color-emoji-container">
-							<img src="./assets/picto/color-thumbnail.png" alt="color-picker" />
-							{/* <img className="emoji-picker" src="./assets/picto/happy.png" alt="emoji" /> */}
-						</div>
+						{addPostPic ? (
+							<div className="form-media-preview">
+								<div className="form-media-preview-container">
+									<div className="close-window-secondary-edition" onClick={cancelPic}>
+										&#9587;
+									</div>
+									{file ? (
+										<div className="img-preview-container">
+											<img className="img-preview-visible" src={URL.createObjectURL(file)} alt="post-pic" />
+										</div>
+									) : (
+										<>
+											<div className="picto-container">
+												<img className="picto" src="./assets/picto/square-plus-solid.svg" alt="add-pic" />
+											</div>
+											<label htmlFor="file">
+												<br />
+												<br />
+												<br />
+												Ajouter une photo
+											</label>
+											<input type="file" id="file" name="file" accept=".jpg, .jpeg, .png" onChange={(e) => setFile(e.target.files[0])} />
+										</>
+									)}
+								</div>
+							</div>
+						) : (
+							<div className="color-emoji-container">
+								<img src="./assets/picto/color-thumbnail.png" alt="color-picker" />
+								{/* <img className="emoji-picker" src="./assets/picto/happy.png" alt="emoji" /> */}
+							</div>
+						)}
+
 						<div className="form-inputs-content-add ">
 							<h5>Ajouter à votre publication</h5>
 							<ul>
-								<li>
+								<li onClick={addPostPicHandler}>
 									<img className="image" src="./assets/picto/file-image-solid.svg" alt="pictures" />
 								</li>
 								<li>

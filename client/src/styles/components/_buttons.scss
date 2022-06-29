@@ -10,6 +10,7 @@
 	font-size: 1.15em;
 	transition: 300ms;
 	cursor: pointer;
+	user-select: none;
 	@include tablet-breakpoint {
 		width: 97%;
 	}
@@ -32,6 +33,7 @@
 	font-weight: 700;
 	transition: 300ms;
 	cursor: pointer;
+	user-select: none;
 	&:hover {
 		background-color: #3ca227;
 	}
@@ -55,8 +57,30 @@
 	background-color: $fds-gray-10;
 	cursor: pointer;
 	transition: 300ms;
+	user-select: none;
 	&:hover {
 		filter: brightness(95%);
+	}
+}
+.close-window-secondary-edition {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 10px;
+	font-weight: 900;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	border: 1px solid $fds-gray-20;
+	border-radius: 50%;
+	color: $fds-gray-80;
+	background-color: #fff;
+	cursor: pointer;
+	transition: 300ms;
+	user-select: none;
+	&:hover {
+		filter: brightness(97%);
 	}
 }
 
