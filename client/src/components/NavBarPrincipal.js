@@ -40,7 +40,7 @@ const NavBarPrincipal = () => {
 							<li className="todo">
 								<NavLink to="/friends" className={(state) => (state.isActive ? "is-active" : "")}>
 									<div className="principal-navbar-ico">
-										<img src="./assets/picto/user-group-solid.svg" alt="home" />
+										<img src="./assets/picto/user-group-solid.svg" alt="friends" />
 									</div>
 								</NavLink>
 							</li>
@@ -56,7 +56,7 @@ const NavBarPrincipal = () => {
 							<li className="todo">
 								<NavLink to="/watch" className={(state) => (state.isActive ? "is-active" : "")}>
 									<div className="principal-navbar-ico">
-										<img src="./assets/picto/photo-film-solid.svg" alt="home" />
+										<img src="./assets/picto/photo-film-solid.svg" alt="pictures" />
 									</div>
 								</NavLink>
 							</li>
