@@ -9,13 +9,17 @@ const FormInputs = (props) => {
 	const dispatch = useDispatch();
 
 	const [addPostPic, setAddPostPic] = useState(false);
+	const [addPostVideo, setAddPostVideo] = useState(false);
+
 	const [isLoading, setIsLoading] = useState(true);
 	const [message, setMessage] = useState("");
 	const [postPicture, setPostPicture] = useState(null);
 	const [video, setVideo] = useState("");
 	const [file, setFile] = useState();
 
-	const handlePost = async () => {
+	const handlePost = async (e) => {
+		e.preventDefault();
+
 		if (message || postPicture || video) {
 			const data = new FormData();
 			data.append("posterId", userData._id);
@@ -41,6 +45,11 @@ const FormInputs = (props) => {
 
 	const cancelPic = () => {
 		setAddPostPic(false);
+		setFile("");
+	};
+
+	const cancelVideo = () => {
+		setAddPostVideo(false);
 		setFile("");
 	};
 
@@ -70,12 +79,18 @@ const FormInputs = (props) => {
 		handleVideo();
 	}, [userData, message, video]);
 
+	// img
 	const addPostPicHandler = () => {
 		setAddPostPic(!addPostPic);
 	};
 
 	const closeUploadProfilPic = () => {
 		props.textFormModification(false);
+	};
+
+	//video
+	const addPostVideoHandler = () => {
+		setAddPostVideo(!addPostVideo);
 	};
 
 	return (
@@ -141,6 +156,23 @@ const FormInputs = (props) => {
 							</div>
 						)}
 
+						{addPostVideo ? (
+							<div className="form-video-preview">
+								<div className="form-video-preview-container">
+									<div className="close-window-secondary-edition" onClick={cancelVideo}>
+										&#9587;
+									</div>
+									{video ? (
+										<div className="img-preview-container">VIDEO PREVIEW</div>
+									) : (
+										<>
+											<input type="text" placeholder="Intégrer un lien" />
+										</>
+									)}
+								</div>
+							</div>
+						) : null}
+
 						<div className="form-inputs-content-add ">
 							<h5>Ajouter à votre publication</h5>
 							<ul>
@@ -156,7 +188,7 @@ const FormInputs = (props) => {
 								<li>
 									<img className="location" src="./assets/picto/location-dot-solid.svg" alt="location" />
 								</li>
-								<li>
+								<li onClick={addPostVideoHandler}>
 									<img className="video" src="./assets/picto/video-solid.svg" alt="video" />
 								</li>
 							</ul>
