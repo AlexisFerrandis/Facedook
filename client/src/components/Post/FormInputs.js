@@ -25,6 +25,7 @@ const FormInputs = (props) => {
 			dispatch(getPosts());
 
 			cancelPost();
+			props.textFormModification(false);
 		} else {
 			alert("Veuillez entrer un message");
 		}
@@ -63,7 +64,7 @@ const FormInputs = (props) => {
 	}, [userData, message, video]);
 
 	const closeUploadProfilPic = () => {
-		props.setTextFormModification(false);
+		props.textFormModification(false);
 	};
 
 	return (
@@ -94,7 +95,11 @@ const FormInputs = (props) => {
 				<div className="form-inputs-content">
 					<form action="" onSubmit={handlePost} className="upload-post">
 						<div className="form-inputs-content-textarea">
-							<textarea className="form-inputs-content-textarea-input" placeholder={`Quoi de neuf, ${userData.pseudo} ?`}></textarea>
+							<textarea name="message" id="message" placeholder={`Quoi de neuf, ${userData.pseudo} ?`} onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
+						</div>
+						<div className="form-media-preview">
+							{/* <img src={postPicture} alt="" />
+							{video && <iframe src={video} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={video}></iframe>} */}
 						</div>
 						<div className="color-emoji-container">
 							<img src="./assets/picto/color-thumbnail.png" alt="color-picker" />
