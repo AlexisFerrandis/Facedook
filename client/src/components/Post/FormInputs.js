@@ -40,6 +40,9 @@ const FormInputs = (props) => {
 			await dispatch(addPost(data));
 			dispatch(getPosts());
 
+			console.log(chosenEmoji);
+			console.log(isLoading);
+
 			cancelPost();
 			props.textFormModification(false);
 		} else {
