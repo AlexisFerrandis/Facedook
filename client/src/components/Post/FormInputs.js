@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import { addPost, getPosts } from "../../actions/post.actions";
 import { isEmpty } from "../Utils";
 
+import Picker from "emoji-picker-react";
+
 const FormInputs = (props) => {
 	const userData = useSelector((state) => state.userReducer);
 	const dispatch = useDispatch();
@@ -16,6 +18,14 @@ const FormInputs = (props) => {
 	const [postPicture, setPostPicture] = useState(null);
 	const [video, setVideo] = useState("");
 	const [file, setFile] = useState();
+
+	//emoji
+	const [chosenEmoji, setChosenEmoji] = useState(null);
+	const [addPostEmoji, setAddPostEmoji] = useState(false);
+	const onEmojiClick = (event, emojiObject) => {
+		setMessage(message + emojiObject.emoji);
+		setChosenEmoji(emojiObject);
+	};
 
 	const handlePost = async (e) => {
 		e.preventDefault();
@@ -37,12 +47,6 @@ const FormInputs = (props) => {
 		}
 	};
 
-	const handlePicture = (e) => {
-		setPostPicture(URL.createObjectURL(e.target.files[0]));
-		setFile(e.target.files[0]);
-		setVideo("");
-	};
-
 	const cancelPic = () => {
 		setAddPostPic(false);
 		setFile("");
@@ -51,6 +55,11 @@ const FormInputs = (props) => {
 	const cancelVideo = () => {
 		setAddPostVideo(false);
 		setFile("");
+		setVideo("");
+	};
+
+	const cancelEmojiPicker = () => {
+		setAddPostEmoji(false);
 	};
 
 	const cancelPost = () => {
@@ -64,33 +73,47 @@ const FormInputs = (props) => {
 		if (!isEmpty(userData)) setIsLoading(false);
 
 		const handleVideo = () => {
-			let findLink = message.split(" ");
+			let findLink = video.split(" ");
 			for (let i = 0; i < findLink.length; i++) {
 				if (findLink[i].includes("https://www.yout") || findLink[i].includes("https://yout")) {
 					let embed = findLink[i].replace("watch?v=", "embed/");
 					setVideo(embed.split("&")[0]);
 					findLink.splice(i, 1);
-					setMessage(findLink.join(" "));
+					// setMessage(findLink.join(" "));
 					setPostPicture("");
 				}
 			}
 		};
 
 		handleVideo();
-	}, [userData, message, video]);
+	}, [userData, video]);
 
 	// img
 	const addPostPicHandler = () => {
 		setAddPostPic(!addPostPic);
+		setAddPostVideo(false);
+		setVideo("");
+		setAddPostEmoji(false);
 	};
 
-	const closeUploadProfilPic = () => {
-		props.textFormModification(false);
-	};
-
-	//video
+	// video
 	const addPostVideoHandler = () => {
 		setAddPostVideo(!addPostVideo);
+		setAddPostPic(false);
+		setPostPicture("");
+		setAddPostEmoji(false);
+	};
+
+	// emoji
+	const addEmojiPostHandler = () => {
+		setAddPostEmoji(!addPostEmoji);
+		setAddPostPic(false);
+		setPostPicture("");
+	};
+
+	// close window
+	const closePostInputsWindow = () => {
+		props.textFormModification(false);
 	};
 
 	return (
@@ -99,7 +122,7 @@ const FormInputs = (props) => {
 				<div className="form-inputs-header">
 					<div></div>
 					<h3>Créer une publication</h3>
-					<button className="close-window" onClick={closeUploadProfilPic}>
+					<button className="close-window" onClick={closePostInputsWindow}>
 						&#9587;
 					</button>
 				</div>
@@ -163,13 +186,36 @@ const FormInputs = (props) => {
 										&#9587;
 									</div>
 									{video ? (
-										<div className="img-preview-container">VIDEO PREVIEW</div>
+										<div className="video-preview-container">{video && <iframe src={video} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={video}></iframe>}</div>
 									) : (
 										<>
-											<input type="text" placeholder="Intégrer un lien" />
+											<img className="video-picto" src="./assets/picto/video-solid.svg" alt="video" />
+											<input name="video-link" className="video-link" id="videoLink" placeholder="Intégrer un lien" onChange={(e) => setVideo(e.target.value)} value={video} type="text" />
 										</>
 									)}
 								</div>
+							</div>
+						) : null}
+
+						{addPostEmoji ? (
+							<div className="emoji-picker-container">
+								<div className="close-window-secondary-edition" onClick={cancelEmojiPicker}>
+									&#9587;
+								</div>
+								<Picker
+									onEmojiClick={onEmojiClick}
+									groupNames={{
+										smileys_people: "Smileys",
+										animals_nature: "Animaux et nature",
+										food_drink: "Boissons et aliments",
+										travel_places: "Voyage et destinations",
+										activities: "Activités",
+										objects: "Objets",
+										symbols: "Symboles",
+										flags: "fun with flags",
+										recently_used: "Utilisé récemment",
+									}}
+								/>
 							</div>
 						) : null}
 
@@ -182,7 +228,7 @@ const FormInputs = (props) => {
 								<li>
 									<img className="tag" src="./assets/picto/user-tag-solid.svg" alt="friends" />
 								</li>
-								<li>
+								<li onClick={addEmojiPostHandler}>
 									<img className="mood" src="./assets/picto/face-laugh-solid.svg" alt="emoji" />
 								</li>
 								<li>

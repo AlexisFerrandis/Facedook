@@ -20,7 +20,7 @@ module.exports.createPost = async (req, res) => {
 		try {
 			if (req.file.detectedMimeType != "image/jpg" && req.file.detectedMimeType != "image/png" && req.file.detectedMimeType != "image/jpeg") throw Error("invalid file");
 
-			if (req.file.size > 500000) throw Error("max size");
+			if (req.file.size > 2000000) throw Error("max size");
 		} catch (err) {
 			const errors = uploadErrors(err);
 			return res.status(201).json({ errors });
