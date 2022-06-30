@@ -94,8 +94,20 @@
 	font-weight: 500;
 	transition: 300ms;
 	cursor: pointer;
-
 	&:hover {
 		filter: brightness(95%);
 	}
+}
+
+.inactif-submit-btn {
+	background-color: $fds-gray-20;
+	color: $fds-gray-45;
+	border-radius: 6px;
+	font-size: 15px;
+	padding: 8px 16px;
+	width: 100%;
+	font-weight: 500;
+	transition: 300ms;
+	cursor: not-allowed;
+	user-select: none;
 }

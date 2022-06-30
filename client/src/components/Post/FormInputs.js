@@ -243,7 +243,7 @@ const FormInputs = (props) => {
 							</ul>
 						</div>
 						<div className="form-inputs-submit">
-							<input type="submit" value="Publier" className="submit-btn" />
+							<input type="submit" value="Publier" className={message ? "submit-btn" : "inactif-submit-btn"} />
 						</div>
 					</form>
 				</div>
