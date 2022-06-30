@@ -1,0 +1,134 @@
+.comments-container {
+	padding: 10px 0;
+	margin: 0 20px;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+	// user form
+	h5 {
+		text-align: right;
+		margin-bottom: 10px;
+		font-size: 14px;
+		font-weight: 600;
+		color: $fds-gray-45;
+		cursor: pointer;
+	}
+	.press-enter {
+		font-size: 12px;
+		margin: 3px 0 0 30px;
+	}
+	.comment-template {
+		background-color: $log-background;
+		width: 100%;
+		padding: 10px;
+		border-radius: 20px;
+	}
+	.user-comment-form {
+		display: flex;
+		.user-pic {
+			position: relative;
+			img {
+				width: 32px;
+				height: 32px;
+				object-fit: cover;
+				border-radius: 50%;
+				margin-right: 10px;
+			}
+			.green-dot {
+				position: absolute;
+				top: 20px;
+				right: 8px;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				background-color: #31a24c;
+			}
+		}
+		.comment-form {
+			position: relative;
+			width: 100%;
+			button {
+				position: absolute;
+				right: 2px;
+				width: 42px;
+				height: 100%;
+				padding: 4px 3px 0 0;
+				border: 2px solid $log-background;
+				border-radius: 50%;
+			}
+			.send-btn {
+				background-color: #fff;
+				cursor: pointer;
+				&:hover {
+					& img {
+						filter: invert(37%) sepia(32%) saturate(6207%) hue-rotate(202deg) brightness(98%) contrast(94%);
+					}
+				}
+				img {
+					width: 24px;
+					filter: invert(64%) sepia(11%) saturate(4283%) hue-rotate(193deg) brightness(101%) contrast(102%);
+				}
+			}
+			.inactif-btn {
+				background-color: #fff;
+				img {
+					width: 24px;
+					user-select: none;
+					filter: invert(0.6);
+				}
+			}
+			input {
+				&::placeholder {
+					font-size: 15px;
+				}
+			}
+		}
+	}
+	::-webkit-scrollbar {
+		width: 3px;
+	}
+	::-webkit-scrollbar-track {
+		background: $fds-gray-20;
+	}
+	::-webkit-scrollbar-thumb {
+		background: $fds-gray-45;
+		cursor: pointer;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: $fds-gray-30;
+	}
+	// comments section
+	.comments-list {
+		margin-top: 15px;
+		padding-right: 25px;
+		max-height: 320px;
+		overflow-y: scroll;
+
+		img {
+			width: 32px;
+			height: 32px;
+			object-fit: cover;
+			border-radius: 50%;
+			margin-top: 7px;
+			margin-right: 10px;
+		}
+		.comment-container {
+			display: flex;
+			border-radius: 10px;
+			padding: 0;
+			h6 {
+				font-size: 13px;
+				font-weight: 600;
+			}
+			p {
+				font-size: 13px;
+			}
+		}
+	}
+	.comment-interactions {
+		font-size: 12px;
+		font-weight: 700;
+		color: $fds-gray-70;
+		margin: 3px 0 10px 60px;
+	}
+}

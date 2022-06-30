@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { updatePost } from "../../actions/post.actions";
-// import FollowHandler from "../FollowHandler";
+import { useSelector } from "react-redux";
+// import { updatePost } from "../../actions/post.actions";
 import { dateParser, isEmpty } from "../Utils";
 import CardComments from "./CardComments";
 import DeleteCard from "./DeleteCard";
@@ -96,14 +95,24 @@ const Card = ({ post }) => {
 					<div className="card-footer">
 						<div className="post-like-comment">
 							<div className="post-like">
-								<img src="./assets/picto/post-like.svg" alt="likes" />
-								<span>32</span>
+								{post.likers.length > 0 && (
+									<>
+										<img src="./assets/picto/post-like.svg" alt="likes" />
+										<span>{post.likers.length}</span>
+									</>
+								)}
 							</div>
 							<div className="post-comment">
-								<span>44 commentaires</span>
+								{post.comments.length > 0 && (
+									<>
+										<span onClick={() => setShowComments(!showComments)}>
+											{post.comments.length} {post.comments.length === 1 ? "commentaire" : "commentaires"}
+										</span>
+									</>
+								)}
 							</div>
 						</div>
-						<PostInteractions post={post} />
+						<PostInteractions post={post} showComments={setShowComments} />
 						{/* <div className="comment-icon">
 							<img onClick={() => setShowComments(!showComments)} src="./assets/pictos/comment.svg" alt="comment" />
 							<span>{post.comments.length}</span>
