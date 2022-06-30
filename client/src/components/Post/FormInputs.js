@@ -72,6 +72,29 @@ const FormInputs = (props) => {
 		setFile("");
 	};
 
+	// open display
+	useEffect(() => {
+		const howToDisplay = () => {
+			let userChoice = props.display;
+			switch (userChoice) {
+				case "pic":
+					setAddPostPic(true);
+					break;
+				case "video":
+					setAddPostVideo(true);
+					break;
+				case "mood":
+					setAddPostEmoji(true);
+					break;
+				default:
+					break;
+			}
+		};
+
+		howToDisplay();
+	}, [userData, props.display]);
+
+	// video
 	useEffect(() => {
 		if (!isEmpty(userData)) setIsLoading(false);
 

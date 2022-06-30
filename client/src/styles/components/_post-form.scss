@@ -1,5 +1,6 @@
 .post-form-container {
 	width: 100%;
+	margin-top: 20px;
 	.header-form {
 		display: flex;
 		align-items: center;
@@ -10,6 +11,7 @@
 			img {
 				width: 40px;
 				height: 40px;
+				object-fit: cover;
 				border-radius: 50%;
 				margin-right: 10px;
 			}
@@ -43,7 +45,7 @@
 			background-color: #fff;
 			color: $fds-gray-70;
 			font-size: 15px;
-			font-weight: 600;
+			font-weight: 500;
 			border-radius: 7px;
 			transition: 300ms;
 			cursor: pointer;

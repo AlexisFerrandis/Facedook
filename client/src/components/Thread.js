@@ -29,7 +29,6 @@ const Thread = () => {
 
 	return (
 		<div className="thread-container">
-			THREAD
 			<ul>
 				{!isEmpty(posts[0]) &&
 					posts.map((post) => {
