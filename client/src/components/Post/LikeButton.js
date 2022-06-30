@@ -8,27 +8,36 @@ const LikeButton = ({ post }) => {
 	const uid = useContext(UIdContext);
 	const dispatch = useDispatch();
 
-	// const like = () => {
-	// 	dispatch(likePost(post._id, uid));
-	// 	setLiked(true);
-	// };
+	const like = () => {
+		setLiked(true);
+		dispatch(likePost(post._id, uid));
+	};
 
-	// const unlike = () => {
-	// 	dispatch(unlikePost(post._id, uid));
-	// 	setLiked(false);
-	// };
+	const unlike = () => {
+		setLiked(false);
+		dispatch(unlikePost(post._id, uid));
+	};
 
-	// useEffect(() => {
-	// 	console.log(uid);
-	// 	if (post.likers.includes(uid)) setLiked(true);
-	// 	else setLiked(false);
-	// }, [uid, post.likers, liked]);
+	useEffect(() => {
+		if (post.likers.includes(uid)) setLiked(true);
+		else setLiked(false);
+	}, [uid, post.likers, liked]);
 
 	return (
-		<div className="interaction">
-			<img src="./assets/picto/thumbs-up-regular.svg" alt="like" />
-			<p>J'aime</p>
-		</div>
+		<>
+			{uid && liked === false && (
+				<div className="interaction to-like" onClick={like}>
+					<img src="./assets/picto/thumbs-up-regular.svg" alt="like" />
+					<p>J'aime</p>
+				</div>
+			)}
+			{uid && liked && (
+				<div className="interaction liked" onClick={unlike}>
+					<img src="./assets/picto/thumbs-up-regular.svg" alt="unlike" />
+					<p>J'aime</p>
+				</div>
+			)}
+		</>
 	);
 };
 

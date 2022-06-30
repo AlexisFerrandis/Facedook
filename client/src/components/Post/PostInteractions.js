@@ -1,7 +1,7 @@
 import React from "react";
 import LikeButton from "./LikeButton";
 
-const PostInteractions = (post) => {
+const PostInteractions = ({ post }) => {
 	return (
 		<div className="post-interactions">
 			<LikeButton post={post} />

@@ -10,8 +10,8 @@ import PostInteractions from "./PostInteractions";
 const Card = ({ post }) => {
 	const [isLoading, setIsLoading] = useState(true);
 
-	const [isUpdated, setIsUpdated] = useState(false);
-	const [textUpdate, setTextUpdate] = useState(null);
+	// const [isUpdated, setIsUpdated] = useState(false);
+	// const [textUpdate, setTextUpdate] = useState(null);
 
 	const [displayDeletePost, setDisplayDeletePost] = useState(false);
 	const [showComments, setShowComments] = useState(false);

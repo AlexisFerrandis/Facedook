@@ -157,5 +157,12 @@
 				filter: invert(44%) sepia(3%) saturate(643%) hue-rotate(182deg) brightness(89%) contrast(89%);
 			}
 		}
+		.liked {
+			background-color: $user-btn-bg;
+			color: $user-btn-text;
+			img {
+				filter: invert(43%) sepia(67%) saturate(5503%) hue-rotate(203deg) brightness(99%) contrast(92%);
+			}
+		}
 	}
 }
