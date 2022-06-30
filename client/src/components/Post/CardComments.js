@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addComment, getPosts } from "../../actions/post.actions";
 // import FollowHandler from "../Profil/FollowHandler";
 import { isEmpty, timestampParser } from "../Utils";
-// import EditDeleteComment from "./EditDeleteComment";
+import EditDeleteComment from "./EditDeleteComment";
 
 const CardComments = ({ post }) => {
 	const [text, setText] = useState("");
@@ -61,7 +61,7 @@ const CardComments = ({ post }) => {
 										alt="commenter-pic"
 									/>
 								</div>
-								<div className="right-part comment-template">
+								<div className="editor-container comment-template">
 									<div className="comment-header">
 										<div className="pseudo">
 											<h6>{comment.commenterPseudo}</h6>
@@ -69,8 +69,8 @@ const CardComments = ({ post }) => {
 										</div>
 									</div>
 									<p>{comment.text}</p>
-									{/* <EditDeleteComment comment={comment} postId={post._id} /> */}
 								</div>
+								<EditDeleteComment comment={comment} postId={post._id} />
 							</div>
 							<div className="comment-interactions">
 								J'aime

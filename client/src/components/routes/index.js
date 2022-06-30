@@ -4,6 +4,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "../../pages/Home";
 import Profil from "../../pages/Profil";
 import Trending from "../../pages/Trending";
+
+import Friends from "../../pages/Friends";
+import Watch from "../../pages/Watch";
+
 import NotFound from "../../pages/NotFound";
 // import NavbarPrincipal from "../NavBarPrincipal";
 
@@ -15,6 +19,10 @@ const index = () => {
 					<Route path="/" exact element={<Home />} />
 					<Route path="/profil" exact element={<Profil />} />
 					<Route path="/trending" exact element={<Trending />} />
+
+					<Route path="/friends" exact element={<Friends />} />
+					<Route path="/watch" exact element={<Watch />} />
+
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Router>

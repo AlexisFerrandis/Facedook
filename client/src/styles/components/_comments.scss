@@ -65,14 +65,14 @@
 					}
 				}
 				img {
-					width: 24px;
+					width: 22px;
 					filter: invert(64%) sepia(11%) saturate(4283%) hue-rotate(193deg) brightness(101%) contrast(102%);
 				}
 			}
 			.inactif-btn {
 				background-color: #fff;
 				img {
-					width: 24px;
+					width: 22px;
 					user-select: none;
 					filter: invert(0.6);
 				}
@@ -100,10 +100,8 @@
 	// comments section
 	.comments-list {
 		margin-top: 15px;
-		padding-right: 25px;
 		max-height: 320px;
 		overflow-y: scroll;
-
 		img {
 			width: 32px;
 			height: 32px;
@@ -112,10 +110,14 @@
 			margin-top: 7px;
 			margin-right: 10px;
 		}
+		.editor-container {
+			padding: 6px 12px;
+			border-radius: 12px;
+		}
 		.comment-container {
+			position: relative;
 			display: flex;
-			border-radius: 10px;
-			padding: 0;
+			padding-right: 10px;
 			h6 {
 				font-size: 13px;
 				font-weight: 600;
@@ -123,7 +125,36 @@
 			p {
 				font-size: 13px;
 			}
+			.edit-comment {
+				position: absolute;
+				visibility: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				top: 5px;
+				right: -25px;
+				width: 30px;
+				height: 30px;
+				padding-bottom: 10px;
+				border-radius: 50%;
+				font-size: 22px;
+				font-weight: 400;
+				background-color: #fff;
+				cursor: pointer;
+				transition: 200ms;
+				&:hover {
+					filter: brightness(0.95);
+				}
+			}
 		}
+	}
+	.comment-item {
+		&:hover {
+			& .edit-comment {
+				visibility: visible;
+			}
+		}
+		padding-right: 40px;
 	}
 	.comment-interactions {
 		font-size: 12px;
