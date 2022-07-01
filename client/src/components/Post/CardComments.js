@@ -74,7 +74,7 @@ const CardComments = ({ post }) => {
 							</div>
 							<div className="comment-interactions">
 								<span>J'aime</span>
-								{comment.asBeenModified && <span>Modifié</span>}
+								{comment.asBeenModified && <span className="modified">Modifié</span>}
 								<span className="date">{timestampParser(comment.timestamp)}</span>
 							</div>
 						</div>
