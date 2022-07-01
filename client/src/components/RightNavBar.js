@@ -32,9 +32,9 @@ const RightNavBar = () => {
 	}, [usersData, userFriendsList, userData, playOnce]);
 
 	return (
-		<div className="right-nav-container">
-			<>
-				{uid && (
+		<>
+			{uid && (
+				<div className="right-nav-container">
 					<div className="fixed-nav">
 						<div className="right-nav-block">
 							<h4>Vos Pages et profils</h4>
@@ -85,9 +85,9 @@ const RightNavBar = () => {
 							</div>
 						</div>
 					</div>
-				)}
-			</>
-		</div>
+				</div>
+			)}
+		</>
 	);
 };
 

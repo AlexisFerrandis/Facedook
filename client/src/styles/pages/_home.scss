@@ -3,7 +3,7 @@
 	width: 100%;
 	.home-content {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		max-width: 1900px;
 		margin: 0 auto;
 		@include small-breakpoint {

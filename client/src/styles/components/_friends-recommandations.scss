@@ -26,6 +26,7 @@
 		margin-bottom: 7px;
 	}
 	.friend-recommandation {
+		position: relative;
 		width: 228px;
 		height: 340px;
 		margin-left: 15px;
@@ -33,13 +34,24 @@
 		border-radius: 6px;
 		-webkit-box-shadow: 0px 3px 6px 6px rgba(36, 36, 36, 0.1);
 		box-shadow: 0px 3px 6px 6px rgba(36, 36, 36, 0.1);
+		@include small-breakpoint {
+			width: 215px;
+			height: 310px;
+		}
+		@include mobile-breakpoint {
+			width: 200px;
+			height: 300px;
+		}
 		.friend-recommandation-picture img {
-			width: 228px;
+			width: 100%;
 			height: 228px;
 			object-fit: cover;
 			border-top-left-radius: 6px;
 			border-top-right-radius: 6px;
 			cursor: pointer;
+			@include small-breakpoint {
+				height: 180px;
+			}
 		}
 		.friend-recommandation-infos {
 			padding: 4px 15px 5px;
@@ -47,14 +59,21 @@
 				font-size: 16px;
 				font-weight: 600;
 				margin-bottom: 5px;
+				@include tablet-breakpoint {
+					font-size: 14px;
+				}
 			}
 		}
 		.add-friend-btn {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 15px;
 			display: flex;
 			align-items: center;
 			text-align: center;
 			justify-content: center;
-			width: 100%;
+			width: 90%;
 			padding: 7px 0;
 			margin-top: 30px;
 			font-size: 15px;
@@ -65,6 +84,9 @@
 			border-radius: 5px;
 			cursor: pointer;
 			transition: 300ms;
+			@include tablet-breakpoint {
+				font-size: 15px;
+			}
 			&:hover {
 				filter: brightness(97%);
 			}

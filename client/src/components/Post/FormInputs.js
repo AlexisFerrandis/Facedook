@@ -133,7 +133,6 @@ const FormInputs = (props) => {
 	// emoji
 	const addEmojiPostHandler = () => {
 		setAddPostEmoji(!addPostEmoji);
-		setAddPostPic(false);
 		setPostPicture("");
 	};
 

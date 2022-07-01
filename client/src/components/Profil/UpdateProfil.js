@@ -56,7 +56,7 @@ const UpdateProfil = () => {
 						<div className="banner-modificator">
 							<button>
 								<img className="camera-picto" src="./assets/picto/camera-solid.svg" alt="camera" />
-								Ajouter une photo de couverture
+								<p>Ajouter une photo de couverture</p>
 							</button>
 						</div>
 					</div>
@@ -94,12 +94,12 @@ const UpdateProfil = () => {
 					<div className="user-informations-container">
 						<ul>
 							<li className="is-active">Publications</li>
-							<li>À propos</li>
-							<li>Amis</li>
-							<li>Photos</li>
-							<li>Vidéos</li>
-							<li>Lieux</li>
-							<li>Plus &#9207;</li>
+							<li className="tablet-display-none">À propos</li>
+							<li className="mobile-display-none">Amis</li>
+							<li className="mobile-display-none">Photos</li>
+							<li className="mobile-display-none">Vidéos</li>
+							<li className="tablet-display-none">Lieux</li>
+							<li className="tablet-display-none">Plus &#9207;</li>
 						</ul>
 					</div>
 					<div className="fake-btn">

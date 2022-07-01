@@ -189,6 +189,9 @@
 					top: 0;
 					right: 0;
 					width: 400px;
+					@include mobile-breakpoint {
+						display: none;
+					}
 					input {
 						background-color: $fds-gray-20;
 						padding: 10px;

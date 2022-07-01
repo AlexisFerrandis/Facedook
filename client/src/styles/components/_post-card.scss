@@ -137,6 +137,9 @@
 		border-top: 1px solid rgba(0, 0, 0, 0.2);
 		color: #65676b;
 		.interaction {
+			@include tablet-breakpoint {
+				margin: 0;
+			}
 			display: flex;
 			justify-content: center;
 			width: 32%;
@@ -146,6 +149,9 @@
 			border-radius: 5px;
 			cursor: pointer;
 			transition: 100ms;
+			@include tablet-breakpoint {
+				font-size: 14px;
+			}
 			&:hover {
 				filter: brightness(0.95);
 			}
@@ -155,6 +161,9 @@
 				object-fit: cover;
 				margin-right: 10px;
 				filter: invert(44%) sepia(3%) saturate(643%) hue-rotate(182deg) brightness(89%) contrast(89%);
+				@include tablet-breakpoint {
+					margin-right: 6px;
+				}
 			}
 		}
 		.liked {
