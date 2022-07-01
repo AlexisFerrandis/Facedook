@@ -26,6 +26,9 @@
 			color: $fds-gray-70;
 			user-select: none;
 			cursor: pointer;
+			@include tablet-breakpoint {
+				font-size: 14px;
+			}
 			&:hover {
 				filter: brightness(0.95);
 			}
@@ -49,6 +52,10 @@
 			border-radius: 7px;
 			transition: 300ms;
 			cursor: pointer;
+			@include tablet-breakpoint {
+				font-size: 14px;
+				padding: 3px 2%;
+			}
 			&:hover {
 				filter: brightness(0.95);
 			}
@@ -65,6 +72,11 @@
 			}
 			.mood-picto {
 				filter: invert(76%) sepia(99%) saturate(2531%) hue-rotate(338deg) brightness(102%) contrast(94%);
+			}
+		}
+		.mood-props {
+			@include tablet-breakpoint {
+				display: none;
 			}
 		}
 	}
@@ -89,6 +101,10 @@
 		border: 1px solid $fds-gray-10;
 		-webkit-box-shadow: 0px 18px 20px 5px rgba(0, 0, 0, 0.1);
 		box-shadow: 0px 18px 20px 5px rgba(0, 0, 0, 0.1);
+		@include mobile-breakpoint {
+			min-width: inherit;
+			width: 95%;
+		}
 	}
 	.form-inputs-header {
 		padding: 10px;
@@ -96,6 +112,10 @@
 		justify-content: space-between;
 		align-items: center;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		@include mobile-breakpoint {
+			padding: 7px;
+			font-size: 15px;
+		}
 	}
 	.user-informations {
 		display: flex;
@@ -152,6 +172,9 @@
 			font-size: 22px;
 			font-weight: 400;
 			resize: none;
+			@include mobile-breakpoint {
+				font-size: 18px;
+			}
 			&::placeholder {
 				color: $text-setting-title;
 			}
@@ -183,13 +206,21 @@
 		border: 1px solid rgba(0, 0, 0, 0.2);
 		border-radius: 7px;
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+		@include mobile-breakpoint {
+			flex-direction: column;
+		}
 		h5 {
 			font-size: 15px;
 			font-weight: 600;
 			color: $fds-gray-100;
+			@include mobile-breakpoint {
+				font-size: 14px;
+			}
 		}
 		ul {
 			display: flex;
+			@include mobile-breakpoint {
+			}
 			li {
 				display: flex;
 				align-items: center;
@@ -201,6 +232,9 @@
 				border-radius: 5px;
 				transition: 300ms;
 				cursor: pointer;
+				@include mobile-breakpoint {
+					margin: 5px 13px 0;
+				}
 				&:hover {
 					filter: brightness(95%);
 				}
@@ -222,6 +256,11 @@
 				}
 				.video {
 					filter: invert(39%) sepia(44%) saturate(3859%) hue-rotate(326deg) brightness(97%) contrast(96%);
+				}
+			}
+			.mobile-display-none {
+				@include mobile-breakpoint {
+					display: none;
 				}
 			}
 		}

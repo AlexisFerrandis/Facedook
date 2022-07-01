@@ -254,7 +254,7 @@ const FormInputs = (props) => {
 								<li>
 									<img className="tag" src="./assets/picto/user-tag-solid.svg" alt="friends" />
 								</li>
-								<li onClick={addEmojiPostHandler}>
+								<li onClick={addEmojiPostHandler} className="mobile-display-none">
 									<img className="mood" src="./assets/picto/face-laugh-solid.svg" alt="emoji" />
 								</li>
 								<li>

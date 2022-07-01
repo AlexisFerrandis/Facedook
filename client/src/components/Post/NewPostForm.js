@@ -10,6 +10,7 @@ const NewPostForm = () => {
 	const [propsToDisplay, setPropsToDisplay] = useState("");
 
 	const handlePostFormDisplay = (e) => {
+		// switch ?
 		if (e.target.className.includes("vanilla")) {
 			setPropsToDisplay("vanilla");
 		} else if (e.target.className.includes("video")) {
