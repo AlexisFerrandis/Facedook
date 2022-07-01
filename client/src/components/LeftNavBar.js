@@ -8,9 +8,9 @@ const LeftNavBar = () => {
 	const userData = useSelector((state) => state.userReducer);
 
 	return (
-		<>
+		<div className="left-nav-container">
 			{uid && (
-				<div className="left-nav-container">
+				<>
 					<div className="left-nav-links">
 						<ul>
 							<li>
@@ -91,9 +91,9 @@ const LeftNavBar = () => {
 							</div>
 						</ul>
 					</div>
-				</div>
+				</>
 			)}
-		</>
+		</div>
 	);
 };
 
