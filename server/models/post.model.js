@@ -28,13 +28,13 @@ const PostSchema = new mongoose.Schema(
 					commenterPseudo: String,
 					text: String,
 					timestamp: Number,
+					asBeenModified: {
+						type: Boolean,
+						default: false,
+					},
 				},
 			],
 			required: true,
-		},
-		isModified: {
-			type: Boolean,
-			default: false,
 		},
 	},
 	{

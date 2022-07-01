@@ -154,6 +154,7 @@ module.exports.editCommentPost = (req, res) => {
 			const theComment = data.comments.find((comment) => comment._id.equals(req.body.commentId));
 			if (!theComment) return res.status(404).send("Comment not found");
 			theComment.text = req.body.text;
+			theComment.asBeenModified = true;
 
 			return data.save((err) => {
 				if (!err) return res.status(200).send(data);

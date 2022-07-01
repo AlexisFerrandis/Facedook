@@ -127,7 +127,7 @@
 			}
 			.edit-comment {
 				position: absolute;
-				// visibility: hidden;
+				visibility: hidden;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -184,6 +184,22 @@
 						}
 					}
 				}
+				.comment-edit-form {
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 400px;
+					input {
+						background-color: $fds-gray-20;
+						padding: 10px;
+						min-height: 48px;
+						width: 365px;
+						border-radius: 13px;
+					}
+					input[type="submit"] {
+						display: none;
+					}
+				}
 			}
 		}
 	}
@@ -200,5 +216,11 @@
 		font-weight: 700;
 		color: $fds-gray-70;
 		margin: 3px 0 10px 60px;
+		span {
+			margin-right: 15px;
+		}
+		.date {
+			font-weight: 500;
+		}
 	}
 }

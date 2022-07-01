@@ -9,9 +9,16 @@ const EditDeleteComment = ({ comment, postId }) => {
 	const [text, setText] = useState("");
 
 	const [deleteConfirmation, setDeleteConfirmation] = useState(false);
+	const [editForm, setEditForm] = useState(false);
 
 	const uid = useContext(UIdContext);
 	const dispatch = useDispatch();
+
+	// edit
+	const openEditForm = () => {
+		setEditForm(true);
+		setEdit(!edit);
+	};
 
 	const handleEdit = (e) => {
 		e.preventDefault();
@@ -20,9 +27,11 @@ const EditDeleteComment = ({ comment, postId }) => {
 			dispatch(editComment(postId, comment._id, text));
 			setText("");
 			setEdit(false);
+			setEditForm(false);
 		}
 	};
 
+	// delete
 	const handleDelete = () => dispatch(deleteComment(postId, comment._id));
 	const confirmDelete = () => {
 		if (deleteConfirmation) {
@@ -43,11 +52,20 @@ const EditDeleteComment = ({ comment, postId }) => {
 
 	return (
 		<div className="edit-comment">
-			{isAuthor && <span onClick={() => setEdit(!edit)}>...</span>}
+			{isAuthor && (
+				<span
+					onClick={() => {
+						setEdit(!edit);
+						setEditForm(false);
+					}}
+				>
+					...
+				</span>
+			)}
 			{isAuthor && edit && (
 				<div className="edit-comment-options-container">
 					<div className="edit-comment-options">
-						<div className="option">
+						<div className="option" onClick={openEditForm}>
 							<p>Modifier</p>
 						</div>
 
@@ -62,27 +80,12 @@ const EditDeleteComment = ({ comment, postId }) => {
 						</div>
 					</div>
 				</div>
-
-				// <form action="" onSubmit={handleEdit} className="comment-edit-form">
-				// 	<label htmlFor="text" onClick={() => setEdit(!edit)}>
-				// 		Editer
-				// 	</label>
-				// 	<br />
-				// 	<input type="text" name="text" onChange={(e) => setText(e.target.value)} defaultValue={comment.text} />
-				// 	<br />
-				// 	<div className="btn">
-				// 		<span
-				// 			onClick={() => {
-				// 				if (window.confirm("Voulez-vous supprimer ce commentaire ?")) {
-				// 					handleDelete();
-				// 				}
-				// 			}}
-				// 		>
-				// 			<img src="./assets/pictos/trash.svg" alt="delete" />
-				// 		</span>
-				// 	</div>
-				// 	<input type="submit" value="Valider modification" />
-				// </form>
+			)}
+			{editForm && (
+				<form action="" onSubmit={handleEdit} className="comment-edit-form">
+					<input type="text" name="text" onChange={(e) => setText(e.target.value)} defaultValue={comment.text} />
+					<button type="submit" value="Valider modification"></button>
+				</form>
 			)}
 		</div>
 	);

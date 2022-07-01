@@ -73,8 +73,9 @@ const CardComments = ({ post }) => {
 								<EditDeleteComment comment={comment} postId={post._id} />
 							</div>
 							<div className="comment-interactions">
-								J'aime
-								<span>{timestampParser(comment.timestamp)}</span>
+								<span>J'aime</span>
+								{comment.asBeenModified && <span>Modifié</span>}
+								<span className="date">{timestampParser(comment.timestamp)}</span>
 							</div>
 						</div>
 					);
