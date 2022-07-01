@@ -1,4 +1,6 @@
 .right-nav-container {
+	display: flex;
+	justify-content: right;
 	width: 33%;
 	padding: 20px 0 0 30px;
 	.fixed-nav {

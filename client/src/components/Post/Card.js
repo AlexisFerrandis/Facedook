@@ -30,6 +30,12 @@ const Card = ({ post }) => {
 		!isEmpty(usersData[0]) && setIsLoading(false);
 	}, [usersData]);
 
+	useEffect(() => {
+		if (post.message.length > 320) {
+			post.message = post.message.substring(0, 320) + "...";
+		}
+	}, [post]);
+
 	const deletePostDisplay = () => {
 		setDisplayDeletePost(!displayDeletePost);
 	};

@@ -28,7 +28,6 @@
 				}
 			}
 			.left-part {
-				width: 160px;
 				align-items: center;
 				.logo {
 					display: flex;
@@ -57,19 +56,36 @@
 						width: 16px;
 						height: 16px;
 					}
+					@include mobile-breakpoint {
+						display: none;
+					}
 				}
 			}
 			.mid-part {
+				margin-left: 60px;
+				@include small-breakpoint {
+					margin-left: inherit;
+				}
 				.mid-part-all {
-					width: 250px;
 					display: flex;
 					justify-content: space-around;
 				}
+
 				li {
-					padding: 4px 20px;
+					padding: 4px 30px;
+					margin-left: 35px;
 					border-radius: 5px;
 					transition: 300ms;
 					cursor: pointer;
+					@include small-breakpoint {
+						margin-left: inherit;
+					}
+					@include tablet-breakpoint {
+						padding: 4px 20px;
+					}
+					@include mobile-breakpoint {
+						padding: 4px 15px;
+					}
 					&:hover {
 						background-color: $log-background;
 					}
@@ -113,6 +129,9 @@
 							width: 18px;
 							height: 18px;
 							filter: invert(10%) sepia(7%) saturate(230%) hue-rotate(182deg) brightness(100%) contrast(86%);
+						}
+						@include mobile-breakpoint {
+							display: none;
 						}
 					}
 					.profil-pic-container {

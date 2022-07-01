@@ -69,6 +69,11 @@ $mood-yellow: rgb(247, 185, 40);
 }
 
 // mixins
+@mixin small-breakpoint {
+	@media (max-width: 1200px) {
+		@content;
+	}
+}
 @mixin tablet-breakpoint {
 	@media (max-width: 900px) {
 		@content;

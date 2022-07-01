@@ -1,9 +1,34 @@
 .home-container {
 	background-color: $log-background;
+	width: 100%;
 	.home-content {
 		display: flex;
 		justify-content: space-between;
 		max-width: 1900px;
 		margin: 0 auto;
+		@include small-breakpoint {
+			padding-left: 20px;
+			width: 100%;
+			.left-nav-container {
+				display: none;
+			}
+			.home-thread-container {
+				max-width: 70%;
+			}
+		}
+		@include tablet-breakpoint {
+			padding: 0 20px;
+			width: 100%;
+			.right-nav-container {
+				display: none;
+			}
+			.home-thread-container {
+				max-width: 100%;
+			}
+		}
+		@include tablet-breakpoint {
+			padding: 0px;
+			width: 100%;
+		}
 	}
 }
