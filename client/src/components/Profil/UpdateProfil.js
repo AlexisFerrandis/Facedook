@@ -2,14 +2,17 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import FriendsRecommandation from "../FriendsRecommandation";
-import Intro from "./Intro";
 
 import UploadBannerPic from "./UploadBannerPic";
 import UploadProfilPic from "./UploadProfilPic";
 
+import FriendsRecommandation from "../FriendsRecommandation";
+import Intro from "./Intro";
+
 import cookie from "js-cookie";
 import NewPostForm from "../Post/NewPostForm";
+
+import Thread from "../Thread";
 
 const UpdateProfil = () => {
 	const userData = useSelector((state) => state.userReducer);
@@ -122,9 +125,11 @@ const UpdateProfil = () => {
 						<div className="post-container">
 							<NewPostForm />
 						</div>
-						<div className="publications-settings">Publications</div>
+						<div className="publications-settings">Publications TODO</div>
 						<div className="user-thread">
-							<div className="user-thread-container">{/* <FirstPost /> */}</div>
+							<div className="user-thread-container">
+								<Thread context={userData._id} />
+							</div>
 						</div>
 					</div>
 				</div>

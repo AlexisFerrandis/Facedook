@@ -17,7 +17,7 @@ const Log = (props) => {
 	};
 
 	return (
-		<div className="connection-form">
+		<div className={props.context === "homepage" ? "connection-form home-page-context" : "connection-form"}>
 			<div className="form-container">
 				{signUpModal && <SignUpForm />}
 				{signInModal && <SignInForm />}

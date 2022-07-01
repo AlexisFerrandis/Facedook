@@ -23,7 +23,7 @@ const Home = () => {
 					<LeftNavBar />
 					<main className="home-thread-container">
 						<header className="home-thread-header">
-							{uid ? <NewPostForm /> : <Log signin={true} signup={false} />}
+							{uid ? <NewPostForm /> : <Log signin={true} signup={false} context={"homepage"} />}
 							<FriendsRecommandation />
 						</header>
 						<Thread />

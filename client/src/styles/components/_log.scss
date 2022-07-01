@@ -1,4 +1,9 @@
 .full-login-page {
+	.home-page-context {
+		width: 1000px;
+		height: 1000px;
+		background-color: yellow;
+	}
 	.up-part {
 		background-color: $log-background;
 		padding: 72px 60px 145px 60px;
@@ -13,6 +18,7 @@
 			max-width: 980px;
 			margin: 0 auto 5px;
 			padding: 25px 0;
+
 			@include tablet-breakpoint {
 				flex-direction: column;
 				text-align: center;

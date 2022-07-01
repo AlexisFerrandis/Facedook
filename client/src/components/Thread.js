@@ -4,11 +4,14 @@ import { getPosts } from "../actions/post.actions";
 import Card from "./Post/Card";
 import { isEmpty } from "./Utils";
 
-const Thread = () => {
+const Thread = (props) => {
 	const [loadPost, setLoadPost] = useState(true);
 	const [count, setCount] = useState(5);
 	const dispatch = useDispatch();
 	const posts = useSelector((state) => state.postReducer);
+
+	// display only profil id thread
+	// const threadContext = props.context;
 
 	const loadMore = () => {
 		if (window.innerHeight + document.documentElement.scrollTop + 1 > document.scrollingElement.scrollHeight) {
