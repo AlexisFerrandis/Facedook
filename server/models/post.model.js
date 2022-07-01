@@ -32,6 +32,10 @@ const PostSchema = new mongoose.Schema(
 			],
 			required: true,
 		},
+		isModified: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	{
 		timestamps: true,

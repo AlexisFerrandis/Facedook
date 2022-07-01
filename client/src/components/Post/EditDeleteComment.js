@@ -8,6 +8,8 @@ const EditDeleteComment = ({ comment, postId }) => {
 	const [edit, setEdit] = useState(false);
 	const [text, setText] = useState("");
 
+	const [deleteConfirmation, setDeleteConfirmation] = useState(false);
+
 	const uid = useContext(UIdContext);
 	const dispatch = useDispatch();
 
@@ -22,6 +24,13 @@ const EditDeleteComment = ({ comment, postId }) => {
 	};
 
 	const handleDelete = () => dispatch(deleteComment(postId, comment._id));
+	const confirmDelete = () => {
+		if (deleteConfirmation) {
+			handleDelete();
+		}
+
+		setDeleteConfirmation(true);
+	};
 
 	useEffect(() => {
 		const checkAuthor = () => {
@@ -38,8 +47,19 @@ const EditDeleteComment = ({ comment, postId }) => {
 			{isAuthor && edit && (
 				<div className="edit-comment-options-container">
 					<div className="edit-comment-options">
-						<div className="edit">Modifier</div>
-						<div className="edit">Supprimer</div>
+						<div className="option">
+							<p>Modifier</p>
+						</div>
+
+						<div onClick={confirmDelete} className={deleteConfirmation ? "delete-confirmation option" : "delete-button option"}>
+							{deleteConfirmation ? (
+								<p>Confirmer</p>
+							) : (
+								<>
+									<p>Supprimer</p>
+								</>
+							)}
+						</div>
 					</div>
 				</div>
 

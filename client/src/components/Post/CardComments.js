@@ -24,7 +24,7 @@ const CardComments = ({ post }) => {
 
 	return (
 		<div className="comments-container">
-			<h5>Plus pertinent ⏷</h5>
+			{post.comments.length > 0 && <h5>Plus pertinent ⏷</h5>}
 			{userData._id && (
 				<>
 					<div className="user-comment-form">
