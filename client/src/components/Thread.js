@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { getPosts } from "../actions/post.actions";
 import Card from "./Post/Card";
 import { isEmpty } from "./Utils";
@@ -40,7 +41,7 @@ const Thread = (props) => {
 
 		window.addEventListener("scroll", loadMore);
 		return () => window.removeEventListener("scroll", loadMore);
-	}, [loadPost, dispatch, count, threadContext, posts.length]);
+	}, [loadPost, count, posts, threadContext, dispatch]);
 
 	return (
 		<div className="thread-container">
@@ -59,6 +60,14 @@ const Thread = (props) => {
 							return <Card post={post} key={post._id} />;
 						})}
 				</ul>
+			)}
+			{threadContext && userPosts.length === 0 && (
+				<div className="window-container empty-post">
+					<h4>Il n'y a pas encore de publication à afficher</h4>
+					<NavLink to="/">
+						<button className="submit-btn">Publier du contenu</button>
+					</NavLink>
+				</div>
 			)}
 		</div>
 	);

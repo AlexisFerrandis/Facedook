@@ -378,6 +378,19 @@
 		.thread-container {
 			width: 100%;
 			max-width: 830px;
+			.empty-post {
+				margin-top: 20px;
+				padding: 30px;
+				text-align: center;
+				h4 {
+					color: $fds-gray-80;
+					font-size: 20px;
+					margin-bottom: 20px;
+				}
+				button {
+					width: 230px;
+				}
+			}
 		}
 	}
 }

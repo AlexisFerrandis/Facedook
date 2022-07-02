@@ -19,7 +19,7 @@ const FriendsRecommandation = () => {
 				return true;
 			});
 			array.sort(() => 0.5 - Math.random());
-			array.length = 7;
+			array.length = 9;
 
 			setFriendsHint(array);
 		};

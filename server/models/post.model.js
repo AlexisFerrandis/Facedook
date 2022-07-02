@@ -32,6 +32,10 @@ const PostSchema = new mongoose.Schema(
 						type: Boolean,
 						default: false,
 					},
+					likers: {
+						type: [String],
+						default: [],
+					},
 				},
 			],
 			required: true,

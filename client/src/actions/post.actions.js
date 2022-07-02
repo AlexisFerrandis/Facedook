@@ -13,6 +13,7 @@ export const DELETE_POST = "DELETE_POST";
 export const ADD_COMMENT = "ADD_COMMENT";
 export const EDIT_COMMENT = "EDIT_COMMENT";
 export const DELETE_COMMENT = "DELETE_COMMENT";
+export const LIKE_POST_COMMENT = "LIKE_POST_COMMENT";
 
 // trends
 export const GET_TRENDS = "GET_TRENDS";
@@ -123,6 +124,20 @@ export const editComment = (postId, commentId, text) => {
 		})
 			.then((res) => {
 				dispatch({ type: EDIT_COMMENT, payload: { postId, commentId, text } });
+			})
+			.catch((err) => console.log(err));
+	};
+};
+
+export const likePostComment = (postId, commentId, likerId) => {
+	return (dispatch) => {
+		return axios({
+			method: "patch",
+			url: `${process.env.REACT_APP_API_URL}api/post/like-comment-post/` + postId,
+			data: { commentId, likerId },
+		})
+			.then((res) => {
+				dispatch({ type: LIKE_POST_COMMENT, payload: { postId, commentId, likerId } });
 			})
 			.catch((err) => console.log(err));
 	};

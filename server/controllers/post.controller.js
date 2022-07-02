@@ -166,6 +166,25 @@ module.exports.editCommentPost = (req, res) => {
 	}
 };
 
+module.exports.likeCommentPost = async (req, res) => {
+	if (!ObjectId.isValid(req.params.id)) return res.status(400).send("ID unknown : " + req.params.id);
+
+	try {
+		await PostModel.findById(req.params.id, (err, data) => {
+			const theComment = data.comments.find((comment) => comment._id.equals(req.body.commentId));
+			if (!theComment) return res.status(404).send("Comment not found");
+			theComment.likers.push(req.body.likerId);
+
+			return data.save((err) => {
+				if (!err) return res.status(200).send(data);
+				return res.status(500).send(err);
+			});
+		});
+	} catch (err) {
+		console.log("well...");
+	}
+};
+
 module.exports.deleteCommentPost = (req, res) => {
 	if (!ObjectId.isValid(req.params.id)) return res.status(400).send("ID unknown : " + req.params.id);
 

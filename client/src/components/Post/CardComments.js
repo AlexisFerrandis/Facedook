@@ -5,6 +5,8 @@ import { addComment, getPosts } from "../../actions/post.actions";
 import { isEmpty, timestampParser } from "../Utils";
 import EditDeleteComment from "./EditDeleteComment";
 
+import CommentLikeButton from "./CommentLikeButton";
+
 const CardComments = ({ post }) => {
 	const [text, setText] = useState("");
 
@@ -73,9 +75,17 @@ const CardComments = ({ post }) => {
 								<EditDeleteComment comment={comment} postId={post._id} />
 							</div>
 							<div className="comment-interactions">
-								<span>J'aime</span>
+								<CommentLikeButton comment={comment} postId={post._id} />
 								{comment.asBeenModified && <span className="modified">Modifié</span>}
 								<span className="date">{timestampParser(comment.timestamp)}</span>
+								{comment.likers.length > 0 && (
+									<div className="comment-likes">
+										<div className="likes-count">
+											<img src="./assets/picto/post-like.svg" alt="like" />
+											<span>{comment.likers.length}</span>
+										</div>
+									</div>
+								)}
 							</div>
 						</div>
 					);
