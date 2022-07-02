@@ -234,6 +234,9 @@
 .user-firends-bio-thread {
 	background-color: $log-background;
 	padding: 0 20px;
+	@include mobile-breakpoint {
+		padding: 0;
+	}
 	.friends-recommendations {
 		max-width: 1250px;
 		margin: 0 auto;
@@ -242,9 +245,20 @@
 		display: flex;
 		max-width: 1250px;
 		margin: 0 auto;
+		@include tablet-breakpoint {
+			flex-direction: column;
+		}
 		.informations-container {
 			width: 32%;
+			min-width: 370px;
 			margin: 20px 20px 20px 0;
+			@include tablet-breakpoint {
+				width: 100%;
+				margin-bottom: 0;
+			}
+			@include mobile-breakpoint {
+				min-width: inherit;
+			}
 			.profil-intro,
 			.profil-photo {
 				margin-bottom: 20px;
@@ -348,6 +362,9 @@
 				display: flex;
 				flex-wrap: wrap;
 				font-size: 12px;
+				@include tablet-breakpoint {
+					display: none;
+				}
 				p {
 					margin: 0 5px;
 					color: $fds-gray-70;
@@ -359,7 +376,8 @@
 			}
 		}
 		.thread-container {
-			width: 68%;
+			width: 100%;
+			max-width: 830px;
 		}
 	}
 }

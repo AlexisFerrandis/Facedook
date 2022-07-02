@@ -75,9 +75,9 @@ const UpdateProfil = () => {
 						<div className="name-and-logout">
 							<div>
 								<h1>{userData.pseudo}</h1>
-								{userData.followers && userData.followers.length > 0 ? (
+								{userData.following && userData.following.length > 0 ? (
 									<NavLink to="/friends">
-										<h5>{userData.followers.length === 1 ? "1 ami" : userData.followers.length + " amis"}</h5>
+										<h5>{userData.following.length === 1 ? "1 ami" : userData.following.length + " amis"}</h5>
 									</NavLink>
 								) : (
 									""
@@ -98,7 +98,9 @@ const UpdateProfil = () => {
 						<ul>
 							<li className="is-active">Publications</li>
 							<li className="tablet-display-none">À propos</li>
-							<li className="mobile-display-none">Amis</li>
+							<NavLink to="/friends">
+								<li className="mobile-display-none">Amis</li>
+							</NavLink>
 							<li className="mobile-display-none">Photos</li>
 							<li className="mobile-display-none">Vidéos</li>
 							<li className="tablet-display-none">Lieux</li>

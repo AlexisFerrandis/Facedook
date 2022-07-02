@@ -84,3 +84,12 @@ $mood-yellow: rgb(247, 185, 40);
 		@content;
 	}
 }
+
+// hashtag
+.hashtag {
+	color: $fds-blue-60;
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+}

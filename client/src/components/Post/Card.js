@@ -36,6 +36,21 @@ const Card = ({ post }) => {
 	// 	}
 	// }, [post]);
 
+	const handleHashtag = (message) => {
+		const array = message.split(" ");
+		for (let i = 0; i < array.length; i++) {
+			array[i] = array[i] + " ";
+			if (array[i].startsWith("#")) {
+				array[i] = (
+					<span className="hashtag" key={array[i]}>
+						{array[i]}{" "}
+					</span>
+				);
+			}
+		}
+		return array;
+	};
+
 	const deletePostDisplay = () => {
 		setDisplayDeletePost(!displayDeletePost);
 	};
@@ -81,7 +96,7 @@ const Card = ({ post }) => {
 						)}
 					</div>
 					<div className="card-content">
-						<p className="post-message">{post.message}</p>
+						<p className="post-message">{handleHashtag(post.message)}</p>
 						{/*{isUpdated === false && <p>{post.message}</p>}
 						{isUpdated && (
 							<div className="update-post">
