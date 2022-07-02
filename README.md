@@ -2,7 +2,7 @@
 
 ## Mongo, Express, React, Redux and Node
 
-![Screenchot-preview](./client/public/assets/img/github.png)
+![Screenchot-preview](./client/public/assets/preview/preview.png)
 
 #### Back
 

@@ -127,7 +127,7 @@ const UpdateProfil = () => {
 						<div className="post-container">
 							<NewPostForm />
 						</div>
-						{/* <div className="publications-settings">Publications list options</div> */}
+						{/* <div className="publications-settings">Publications list</div> */}
 						<div className="user-thread">
 							<div className="user-thread-container">
 								<Thread context={userData._id} />

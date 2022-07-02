@@ -3,6 +3,10 @@
 	.friends-list {
 		width: 70%;
 		padding: 0 20px 20px;
+		@include tablet-breakpoint {
+			width: 100%;
+		}
+
 		.friends-recommendation {
 			width: 100%;
 			h4 {
@@ -13,13 +17,17 @@
 		}
 	}
 	.friends-menu {
-		min-width: 30%;
+		width: 30%;
+		max-width: 360px;
 		height: 100vh;
 		background-color: #fff;
 		padding: 7px 12px;
 		border-right: 1px solid rgba(0, 0, 0, 0.1);
 		-webkit-box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.15);
 		box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.15);
+		@include tablet-breakpoint {
+			display: none;
+		}
 		h1 {
 			font-size: 24px;
 		}
@@ -112,6 +120,24 @@
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+	// friends grid
+	.daniel-container {
+		ul {
+			flex-wrap: wrap;
+			.friend-container {
+				margin: 10px auto;
+				width: 30%;
+				max-width: 260px;
+				min-width: 200px;
+				.friend-recommandation {
+					width: 100%;
+				}
+				@include mobile-breakpoint {
+					width: 90%;
 				}
 			}
 		}
