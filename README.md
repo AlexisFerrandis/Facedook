@@ -1,6 +1,6 @@
 # FACEDOOK
 
-## Mongo, Express, React, Redux and Node
+## Lite version of Facebook with Express, React, Redux, Mongo and Node
 
 ![Screenchot-preview](./client/public/assets/preview/preview.png)
 
@@ -8,6 +8,7 @@
 
 -   CRUD on user & posts
 -   Authentification
+-   Bcrypt, jwt, multer
 -   Upload image
 
 #### Front

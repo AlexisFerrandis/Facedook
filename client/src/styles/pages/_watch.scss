@@ -1,0 +1,13 @@
+.watch-thread {
+	width: 70%;
+	max-width: 900px;
+	margin: 0 20px 0 380px;
+	@include tablet-breakpoint {
+		width: 100%;
+		margin: 0 20px;
+	}
+}
+.watch-edition {
+	position: fixed;
+	min-width: 360px;
+}
