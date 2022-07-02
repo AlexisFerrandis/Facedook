@@ -37,6 +37,9 @@
 	&:hover {
 		background-color: #3ca227;
 	}
+	&:active {
+		filter: brightness(0.92);
+	}
 	@include mobile-breakpoint {
 		font-size: 14px;
 		width: 191px;
@@ -61,6 +64,11 @@
 	&:hover {
 		filter: brightness(95%);
 	}
+	&:active {
+		transform: scale(0.98);
+		-webkit-box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
+		box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
+	}
 }
 .close-window-secondary-edition {
 	display: flex;
@@ -82,6 +90,11 @@
 	&:hover {
 		filter: brightness(97%);
 	}
+	&:active {
+		transform: scale(0.98);
+		-webkit-box-shadow: inset 5px 5px 10px 3px rgba(0, 0, 0, 0.2);
+		box-shadow: inset 5px 5px 10px 3px rgba(0, 0, 0, 0.2);
+	}
 }
 
 .submit-btn {
@@ -97,6 +110,9 @@
 	&:hover {
 		filter: brightness(95%);
 	}
+	&:active {
+		filter: brightness(90%);
+	}
 }
 
 .inactif-submit-btn {
@@ -110,19 +126,4 @@
 	transition: 300ms;
 	cursor: not-allowed;
 	user-select: none;
-}
-
-.spinner {
-	width: 30px;
-	height: 30px;
-	animation: spinner infinite 2.5s forwards;
-}
-
-@keyframes spinner {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
 }

@@ -93,3 +93,19 @@ $mood-yellow: rgb(247, 185, 40);
 		text-decoration: underline;
 	}
 }
+
+// spinner
+.spinner {
+	width: 30px;
+	height: 30px;
+	animation: spinner infinite 2.5s forwards;
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

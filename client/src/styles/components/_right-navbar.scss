@@ -3,8 +3,23 @@
 	justify-content: right;
 	width: 33%;
 	padding: 20px 0 0 30px;
+	::-webkit-scrollbar {
+		width: 3px;
+	}
+	::-webkit-scrollbar-track {
+		background: $fds-gray-20;
+	}
+	::-webkit-scrollbar-thumb {
+		background: $fds-gray-45;
+		cursor: pointer;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: $fds-gray-30;
+	}
 	.fixed-nav {
 		position: fixed;
+		height: 90%;
+		overflow-y: scroll;
 		h4 {
 			font-size: 17px;
 			font-weight: 600;

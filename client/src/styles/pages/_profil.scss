@@ -35,6 +35,11 @@
 					&:hover {
 						filter: brightness(97%);
 					}
+					&:active {
+						transform: scale(0.98);
+						-webkit-box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
+						box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
+					}
 				}
 				.camera-picto {
 					width: 16px;
@@ -85,7 +90,6 @@
 						}
 					}
 				}
-
 				.camera-picto-container {
 					position: absolute;
 					display: flex;
@@ -107,6 +111,11 @@
 					}
 					&:hover {
 						filter: brightness(95%);
+					}
+					&:active {
+						transform: scale(0.98);
+						-webkit-box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
+						box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
 					}
 					img {
 						width: 20px;
@@ -151,6 +160,11 @@
 						transition: 300ms;
 						&:hover {
 							filter: brightness(97%);
+						}
+						&:active {
+							transform: scale(0.99);
+							-webkit-box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
+							box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
 						}
 						.logout-pic {
 							width: 16px;
@@ -221,6 +235,10 @@
 				&:hover {
 					filter: brightness(97%);
 				}
+				&:active {
+					filter: brightness(95%);
+					transform: scale(0.99);
+				}
 			}
 		}
 	}
@@ -287,6 +305,10 @@
 					transition: 300ms;
 					&:hover {
 						filter: brightness(95%);
+					}
+					&:active {
+						filter: brightness(92%);
+						transform: scale(0.99);
 					}
 				}
 				textarea {

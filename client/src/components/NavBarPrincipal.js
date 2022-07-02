@@ -75,25 +75,19 @@ const NavBarPrincipal = () => {
 						<div className="right-part">
 							<ul className="right-part-list">
 								<li className="options-navbar-ico">
-									<NavLink to="/settings">
-										<img className="ico" src="./assets/picto/list-ul-solid.svg" alt="settings" />
-									</NavLink>
+									<img className="ico" src="./assets/picto/list-ul-solid.svg" alt="settings" />
 								</li>
 								<li className="options-navbar-ico">
-									<NavLink to="/messenger">
-										<img className="ico" src="./assets/picto/facebook-messenger-brands.svg" alt="messenger" />
-									</NavLink>
+									<img className="ico" src="./assets/picto/facebook-messenger-brands.svg" alt="messenger" />
 								</li>
 								<li className="options-navbar-ico">
-									<NavLink to="/notifications">
-										<img className="ico" src="./assets/picto/bell-solid.svg" alt="notifications" />
-									</NavLink>
+									<img className="ico" src="./assets/picto/bell-solid.svg" alt="notifications" />
 								</li>
-								<li className="profil-pic-container">
-									<NavLink to="/profil">
+								<NavLink to="/profil">
+									<li className="profil-pic-container">
 										<img className="profil-pic" src={userData.picture} alt="profil-pic" />
-									</NavLink>
-								</li>
+									</li>
+								</NavLink>
 								{/* <Logout /> */}
 							</ul>
 						</div>

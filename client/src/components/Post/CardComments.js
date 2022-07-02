@@ -75,7 +75,7 @@ const CardComments = ({ post }) => {
 								<EditDeleteComment comment={comment} postId={post._id} />
 							</div>
 							<div className="comment-interactions">
-								<CommentLikeButton comment={comment} postId={post._id} />
+								<CommentLikeButton comment={comment} postId={post._id} increment={comment.likers.length} />
 								{comment.asBeenModified && <span className="modified">Modifié</span>}
 								<span className="date">{timestampParser(comment.timestamp)}</span>
 								{comment.likers.length > 0 && (

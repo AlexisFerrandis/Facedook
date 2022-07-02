@@ -51,43 +51,47 @@ const EditDeleteComment = ({ comment, postId }) => {
 	}, [uid, comment.commenterId]);
 
 	return (
-		<div className="edit-comment">
+		<>
 			{isAuthor && (
-				<span
-					onClick={() => {
-						setEdit(!edit);
-						setEditForm(false);
-					}}
-				>
-					...
-				</span>
-			)}
-			{isAuthor && edit && (
-				<div className="edit-comment-options-container">
-					<div className="edit-comment-options">
-						<div className="option" onClick={openEditForm}>
-							<p>Modifier</p>
-						</div>
+				<div className="edit-comment">
+					{isAuthor && (
+						<span
+							onClick={() => {
+								setEdit(!edit);
+								setEditForm(false);
+							}}
+						>
+							...
+						</span>
+					)}
+					{isAuthor && edit && (
+						<div className="edit-comment-options-container">
+							<div className="edit-comment-options">
+								<div className="option" onClick={openEditForm}>
+									<p>Modifier</p>
+								</div>
 
-						<div onClick={confirmDelete} className={deleteConfirmation ? "delete-confirmation option" : "delete-button option"}>
-							{deleteConfirmation ? (
-								<p>Confirmer</p>
-							) : (
-								<>
-									<p>Supprimer</p>
-								</>
-							)}
+								<div onClick={confirmDelete} className={deleteConfirmation ? "delete-confirmation option" : "delete-button option"}>
+									{deleteConfirmation ? (
+										<p>Confirmer</p>
+									) : (
+										<>
+											<p>Supprimer</p>
+										</>
+									)}
+								</div>
+							</div>
 						</div>
-					</div>
+					)}
+					{editForm && (
+						<form action="" onSubmit={handleEdit} className="comment-edit-form">
+							<input type="text" name="text" onChange={(e) => setText(e.target.value)} defaultValue={comment.text} />
+							<button type="submit" value="Valider modification"></button>
+						</form>
+					)}
 				</div>
 			)}
-			{editForm && (
-				<form action="" onSubmit={handleEdit} className="comment-edit-form">
-					<input type="text" name="text" onChange={(e) => setText(e.target.value)} defaultValue={comment.text} />
-					<button type="submit" value="Valider modification"></button>
-				</form>
-			)}
-		</div>
+		</>
 	);
 };
 

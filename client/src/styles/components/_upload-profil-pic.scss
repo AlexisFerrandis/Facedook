@@ -42,6 +42,9 @@
 				&:hover {
 					filter: brightness(97%);
 				}
+				&:active {
+					filter: brightness(93%);
+				}
 			}
 			input[type="file"] {
 				display: none;
@@ -60,9 +63,13 @@
 					font-weight: 500;
 					border-radius: 5px;
 					cursor: pointer;
-					transition: 300ms;
+					transition: 100ms;
 					&:hover {
-						filter: brightness(92%);
+						filter: brightness(94%);
+					}
+					&:active {
+						filter: brightness(90%);
+						transform: scale(0.99);
 					}
 				}
 				.img-preview {

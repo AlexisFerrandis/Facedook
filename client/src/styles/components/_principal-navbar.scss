@@ -1,13 +1,14 @@
 .header {
-	padding-bottom: 58px;
+	padding-bottom: 56px;
 	background-color: #fff;
 	.principal-nav {
 		z-index: 999;
 		position: fixed;
 		width: 100%;
 		background-color: #fff;
-		-webkit-box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.2);
-		box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.2);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0px 1px 3px 1px rgba(105, 105, 105, 0.1);
+		box-shadow: 0px 2px 3px 1px rgba(105, 105, 105, 0.1);
 		padding: 5px 15px 7px 15px;
 		margin-bottom: 2px;
 		&-container {
@@ -88,11 +89,14 @@
 					&:hover {
 						background-color: $log-background;
 					}
+					&:active {
+						filter: brightness(94%);
+					}
 					.is-active {
 						position: relative;
 						&::after {
 							position: absolute;
-							bottom: -13px;
+							bottom: -14px;
 							left: -18px;
 							content: "";
 							height: 3px;
@@ -119,10 +123,15 @@
 						background-color: #f0f2f5;
 						border-radius: 50%;
 						margin-left: 6px;
-						padding-top: 4px;
-						transition: 300ms;
+						transition: 100ms;
+						cursor: pointer;
 						&:hover {
 							filter: brightness(95%);
+						}
+						&:active {
+							transform: scale(0.98);
+							-webkit-box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
+							box-shadow: inset 3px 3px 5px 3px rgba(0, 0, 0, 0.05);
 						}
 						.ico {
 							width: 18px;

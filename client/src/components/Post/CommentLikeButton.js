@@ -12,10 +12,13 @@ const CommentLikeButton = (props) => {
 	const like = () => {
 		dispatch(likePostComment(props.postId, props.comment._id, uid));
 		setLiked(true);
+		props.comment.likers.length += 1;
 	};
 
 	const unlike = () => {
+		dispatch(likePostComment(props.postId, props.comment._id, uid));
 		setLiked(false);
+		props.comment.likers.length = props.comment.likers.length - 1;
 	};
 
 	useEffect(() => {

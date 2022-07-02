@@ -3,10 +3,11 @@
 	width: 33%;
 	ul {
 		position: fixed;
-		height: 92vh;
+		height: 90vh;
 		margin-top: 15px;
 		padding-left: 15px;
 		li {
+			width: 100%;
 			h6 {
 				font-size: 14px;
 				font-weight: 600;
@@ -23,6 +24,9 @@
 				transition: 100ms;
 				&:hover {
 					filter: brightness(0.95);
+				}
+				&:active {
+					filter: brightness(92%);
 				}
 				img {
 					width: 36px;

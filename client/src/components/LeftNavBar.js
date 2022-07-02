@@ -55,12 +55,12 @@ const LeftNavBar = () => {
 									</div>
 								</NavLink>
 							</li>
-							<li>
+							{/* <li>
 								<div className="link-container">
 									<img src="../assets/picto/colored/memories.png" alt="memories" />
 									<h6>Souvenirs</h6>
 								</div>
-							</li>
+							</li> */}
 							<li>
 								<div className="link-container">
 									<img src="../assets/picto/colored/record.png" alt="records" />
@@ -79,12 +79,12 @@ const LeftNavBar = () => {
 									<h6>Événements</h6>
 								</div>
 							</li>
-							<li>
+							{/* <li>
 								<div className="link-container">
 									<img src="../assets/picto/colored/most-recent.png" alt="most-recent" />
 									<h6>Plus récentes</h6>
 								</div>
-							</li>
+							</li> */}
 							<div className="grey-separator"></div>
 							<div className="legal-links">
 								<p>Confidentialité</p>·<p>Conditions générales</p>·<p>Publicités</p>·<p>Choix publicitaires</p>·<p>Cookies</p>·<p>Plus</p>·<p>Mëta © 2022</p>

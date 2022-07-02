@@ -173,7 +173,12 @@ module.exports.likeCommentPost = async (req, res) => {
 		await PostModel.findById(req.params.id, (err, data) => {
 			const theComment = data.comments.find((comment) => comment._id.equals(req.body.commentId));
 			if (!theComment) return res.status(404).send("Comment not found");
-			theComment.likers.push(req.body.likerId);
+
+			if (!theComment.likers.includes(req.body.likerId)) {
+				theComment.likers.push(req.body.likerId);
+			} else {
+				theComment.likers.remove(req.body.likerId);
+			}
 
 			return data.save((err) => {
 				if (!err) return res.status(200).send(data);

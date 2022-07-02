@@ -1,0 +1,119 @@
+.friends-page {
+	display: flex;
+	.friends-list {
+		width: 70%;
+		padding: 0 20px 20px;
+		.friends-recommendation {
+			width: 100%;
+			h4 {
+				font-size: 24px;
+				font-weight: 600;
+				margin: 7px 0 15px 15px;
+			}
+		}
+	}
+	.friends-menu {
+		min-width: 30%;
+		height: 100vh;
+		background-color: #fff;
+		padding: 7px 12px;
+		border-right: 1px solid rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.15);
+		box-shadow: 0px 1px 2px 1px rgba(105, 105, 105, 0.15);
+		h1 {
+			font-size: 24px;
+		}
+		img {
+			width: 20px;
+			height: 20px;
+			object-fit: cover;
+		}
+		.friends-menu-container {
+			.friends-menu-title {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 12px;
+				img {
+					width: 36px;
+					height: 36px;
+					padding: 8px;
+					border-radius: 50%;
+					background-color: $fds-gray-10;
+					cursor: pointer;
+					filter: invert(0.05);
+					transition: 100ms;
+					&:hover {
+						filter: invert(0.05) brightness(0.97);
+					}
+					&:active {
+						transform: scale(0.98);
+						-webkit-box-shadow: inset 5px 5px 10px 3px rgba(0, 0, 0, 0.2);
+						box-shadow: inset 5px 5px 10px 3px rgba(0, 0, 0, 0.2);
+					}
+				}
+			}
+			.friends-menu-options {
+				.friends-menu-option {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 8px 9px;
+					margin-bottom: 5px;
+					border-radius: 7px;
+					cursor: pointer;
+					transition: 100ms;
+					.left-part {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						h3 {
+							font-size: 16px;
+							font-weight: 600;
+							margin: 0;
+						}
+						.friends-menu-option-ico {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							width: 36px;
+							height: 36px;
+							margin-right: 10px;
+							border-radius: 50%;
+							background-color: $fds-gray-25;
+							img {
+								width: 20px;
+								height: 20px;
+								object-fit: cover;
+							}
+						}
+					}
+					&:hover {
+						background-color: $log-background;
+					}
+					&:active {
+						filter: brightness(0.92);
+					}
+					.right-part {
+						img {
+							height: 18px;
+							object-fit: fill;
+							filter: invert(0.4);
+						}
+					}
+				}
+				.is-active {
+					background-color: $log-background;
+					.left-part {
+						.friends-menu-option-ico {
+							background-color: rgb(24, 119, 242);
+							img {
+								filter: invert(1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
