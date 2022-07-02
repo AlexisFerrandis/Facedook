@@ -18,7 +18,7 @@ const Watch = () => {
 						<section className="friends-menu watch-edition">
 							<div className="friends-menu-container">
 								<div className="friends-menu-title">
-									<h1>Amis</h1>
+									<h1>Watch</h1>
 									<img src="./assets/picto/gear-solid.svg" alt="settings" />
 								</div>
 								<div className="friends-menu-options">

@@ -58,7 +58,9 @@ const Card = ({ post }) => {
 	return (
 		<li className="card-container window-container" key={post._id}>
 			{isLoading ? (
-				<img className="spinner" src="./assets/picto/spinner.svg" alt="spinner" />
+				<div className="spinner-container">
+					<img className="spinner" src="./assets/picto/spinner.svg" alt="spinner" />
+				</div>
 			) : (
 				<>
 					<div className="card-header">

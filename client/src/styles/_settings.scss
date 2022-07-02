@@ -95,6 +95,17 @@ $mood-yellow: rgb(247, 185, 40);
 }
 
 // spinner
+.spinner-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	.spinner {
+		width: 30px;
+		height: 30px;
+		margin: 30px auto;
+		animation: spinner infinite 2.5s forwards;
+	}
+}
 .spinner {
 	width: 30px;
 	height: 30px;
