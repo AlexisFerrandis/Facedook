@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import FollowHandler from "../FollowHandler";
 import { isEmpty } from "../Utils";
 import { UIdContext } from "../../components/AppContext";
+import { NavLink } from "react-router-dom";
 
 const FriendsGrid = () => {
 	const uid = useContext(UIdContext);
@@ -42,9 +43,11 @@ const FriendsGrid = () => {
 										return (
 											<li key={usersData[i]._id} className="friend-container">
 												<div className="friend-recommandation">
-													<div className="friend-recommandation-picture">
-														<img src={usersData[i].picture} alt="friend-pic" />
-													</div>
+													<NavLink to={"/" + usersData[i]._id}>
+														<div className="friend-recommandation-picture">
+															<img src={usersData[i].picture} alt="friend-pic" />
+														</div>
+													</NavLink>
 													<div className="friend-recommandation-infos">
 														<div className="friend-recommandation-name">{usersData[i].pseudo}</div>
 														<FollowHandler idToFollow={usersData[i]._id} type={"suggestion"} />

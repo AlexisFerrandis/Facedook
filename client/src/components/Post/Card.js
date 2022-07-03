@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 // import { updatePost } from "../../actions/post.actions";
 import { dateParser, isEmpty } from "../Utils";
 import CardComments from "./CardComments";
@@ -65,18 +66,20 @@ const Card = ({ post }) => {
 				<>
 					<div className="card-header">
 						<div className="poster-info">
-							<img
-								src={
-									!isEmpty(usersData[0]) &&
-									usersData
-										.map((user) => {
-											if (user._id === post.posterId) return user.picture;
-											else return null;
-										})
-										.join("")
-								}
-								alt="poster-pic"
-							/>
+							<NavLink to={`/${post.posterId}`}>
+								<img
+									src={
+										!isEmpty(usersData[0]) &&
+										usersData
+											.map((user) => {
+												if (user._id === post.posterId) return user.picture;
+												else return null;
+											})
+											.join("")
+									}
+									alt="poster-pic"
+								/>
+							</NavLink>
 							<div className="post-info">
 								<h3>
 									{!isEmpty(usersData[0]) &&

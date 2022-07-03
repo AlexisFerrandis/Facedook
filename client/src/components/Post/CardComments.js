@@ -6,6 +6,7 @@ import { isEmpty, timestampParser } from "../Utils";
 import EditDeleteComment from "./EditDeleteComment";
 
 import CommentLikeButton from "./CommentLikeButton";
+import { NavLink } from "react-router-dom";
 
 const CardComments = ({ post }) => {
 	const [text, setText] = useState("");
@@ -50,18 +51,20 @@ const CardComments = ({ post }) => {
 						<div className="comment-item" key={comment._id}>
 							<div className={comment.commenterId === userData._id ? "comment-container client" : "comment-container"}>
 								<div className="left-part">
-									<img
-										src={
-											!isEmpty(usersData[0]) &&
-											usersData
-												.map((user) => {
-													if (user._id === comment.commenterId) return user.picture;
-													else return null;
-												})
-												.join("")
-										}
-										alt="commenter-pic"
-									/>
+									<NavLink to={`/${comment.commenterId}`}>
+										<img
+											src={
+												!isEmpty(usersData[0]) &&
+												usersData
+													.map((user) => {
+														if (user._id === comment.commenterId) return user.picture;
+														else return null;
+													})
+													.join("")
+											}
+											alt="commenter-pic"
+										/>
+									</NavLink>
 								</div>
 								<div className="editor-container comment-template">
 									<div className="comment-header">

@@ -43,17 +43,17 @@ const FriendsRecommandation = () => {
 									if (user === usersData[i]._id) {
 										return (
 											<li key={usersData[i]._id} className="friend-container">
-												<NavLink to={"/" + usersData[i]._id}>
-													<div className="friend-recommandation">
+												<div className="friend-recommandation">
+													<NavLink to={"/" + usersData[i]._id}>
 														<div className="friend-recommandation-picture">
 															<img src={usersData[i].picture} alt="friend-pic" />
 														</div>
-														<div className="friend-recommandation-infos">
-															<div className="friend-recommandation-name">{usersData[i].pseudo}</div>
-															<FollowHandler idToFollow={usersData[i]._id} type={"suggestion"} />
-														</div>
+													</NavLink>
+													<div className="friend-recommandation-infos">
+														<div className="friend-recommandation-name">{usersData[i].pseudo}</div>
+														<FollowHandler idToFollow={usersData[i]._id} type={"suggestion"} />
 													</div>
-												</NavLink>
+												</div>
 											</li>
 										);
 									}

@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getPosts } from "../actions/post.actions";
+import { UIdContext } from "./AppContext";
 import Card from "./Post/Card";
 import { isEmpty } from "./Utils";
 
 const Thread = (props) => {
+	const uid = useContext(UIdContext);
+
 	const [loadPost, setLoadPost] = useState(true);
 	const [count, setCount] = useState(5);
 	const dispatch = useDispatch();
@@ -64,9 +67,12 @@ const Thread = (props) => {
 			{threadContext && userPosts.length === 0 && (
 				<div className="window-container empty-post">
 					<h4>Il n'y a pas encore de publication à afficher</h4>
-					<NavLink to="/">
-						<button className="submit-btn">Publier du contenu</button>
-					</NavLink>
+
+					{uid === threadContext && (
+						<NavLink to="/">
+							<button className="submit-btn">Publier du contenu</button>
+						</NavLink>
+					)}
 				</div>
 			)}
 		</div>

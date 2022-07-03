@@ -5,12 +5,13 @@ import { updateBio } from "../../actions/user.actions";
 // import { dateParser } from "../Utils";
 // import FollowHandler from "./FollowHandler";
 
-const Intro = () => {
+const Intro = (usersProfil) => {
 	const [bio, setBio] = useState("");
 	const [updateForm, setUpdateForm] = useState(false);
 	const userData = useSelector((state) => state.userReducer);
 	// const usersData = useSelector((state) => state.usersReducer);
 	// const error = useSelector((state) => state.errorReducer.userError);
+
 	const dispatch = useDispatch();
 
 	// const [followingPopup, setFollowingPopup] = useState(false);
@@ -31,9 +32,11 @@ const Intro = () => {
 				<div className="options">
 					{updateForm === false && (
 						<>
-							<button className="principal-option" onClick={() => setUpdateForm(!updateForm)}>
-								{userData.bio ? "Modifier la bio" : "Ajouter une bio"}
-							</button>
+							{!usersProfil.visiting && (
+								<button className="principal-option" onClick={() => setUpdateForm(!updateForm)}>
+									{userData.bio ? "Modifier la bio" : "Ajouter une bio"}
+								</button>
+							)}
 							<p className="content-value" onClick={() => setUpdateForm(!updateForm)}>
 								{userData.bio}
 							</p>
@@ -53,10 +56,13 @@ const Intro = () => {
 							</div>
 						</>
 					)}
-
-					<button className="principal-option">Modifier les infos</button>
-					<button className="principal-option">Ajouter des loisirs</button>
-					<button className="principal-option">Ajouter du contenu à la une</button>
+					{!usersProfil.visiting && (
+						<>
+							<button className="principal-option">Modifier les infos</button>
+							<button className="principal-option">Ajouter des loisirs</button>
+							<button className="principal-option">Ajouter du contenu à la une</button>
+						</>
+					)}
 				</div>
 			</div>
 
